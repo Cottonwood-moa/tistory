@@ -25,18 +25,18 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </head>
 
 <body id="[##_body_id_##]"
   class="<s_if_var_color-type>[##_var_color-type_##]</s_if_var_color-type><s_if_var_post-type> [##_var_post-type_##]</s_if_var_post-type><s_if_var_view-more> paging-view-more</s_if_var_view-more>">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
 
-
+  
   <s_t3>
     <div id="acc-nav">
       <a href="#content">본문 바로가기</a>
@@ -44,7 +44,7 @@
 
     <div id="wrap"
       style="background-image: url('https://tistory3.daumcdn.net/tistory/4707383/skin/images/wallpaperbetter.jpg');">
-
+      <div id="cloud-intro">
 
 
       <div id="mainContent"
@@ -85,20 +85,20 @@
                   style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
                 <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Guestbook</div></button>
               </a>
-              <a href="https://cottonwood-moa.tistory.com/category/Node.js">
-                <img src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/nodejs.png"
+              <a href="https://cottonwood-moa.tistory.com/category/%EC%9D%BC%EC%83%81">
+                <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/calendar.png"
                   style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
-                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Node.js</div></button>
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Life</div></button>
               </a>
               <a href="https://cottonwood-moa.tistory.com/category/HTML%2BCSS">
                 <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/html-5.png"
                   style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
                 <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">HTML+CSS</div></button>
               </a>
-              <a href="https://cottonwood-moa.tistory.com/category/%EC%9D%BC%EC%83%81">
-                <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/calendar.png"
+              <a href="https://cottonwood-moa.tistory.com/category/Node.js">
+                <img src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/nodejs.png"
                   style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
-                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Life</div></button>
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Node.js</div></button>
               </a>
               <a href="https://cottonwood-moa.tistory.com/category/JavaScript">
                 <img src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/javascript.png"
@@ -355,6 +355,8 @@
                     </a>
                   </div>
                 </s_index_article_rep>
+
+
                 <s_permalink_article_rep>
                   <div class="hgroup">
                     <div class="category">[##_article_rep_category_##]</div>
@@ -368,9 +370,13 @@
                       </s_ad_div>
                     </div>
                   </div>
+
                   <div class="entry-content">
                     [##_article_rep_desc_##]
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_inline_share_toolbox_k416"></div>
                   </div>
+
                   <s_tag_label>
                     <div class="tags">
                       <h2>태그</h2>
@@ -383,6 +389,7 @@
                   <s_article_related>
                     <div class="related-articles">
                       <h2><strong>'[##_article_rep_category_##]'</strong> Related Articles</h2>
+
                       <ul>
                         <s_article_related_rep>
                           <li>
@@ -598,6 +605,7 @@
           </footer> -->
 
       </div>
+
       <div id="container">
         <!-- folder  -->
         <div id="leftThing" style="width: 5rem; height: 50rem; font:white;">
@@ -640,11 +648,14 @@
               <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">궁합테스트</span></button>
           </a>
 
-          <button type="button" class="btn_image" id="img_btn"><img
-              src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/subscribe.png"
-              style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-            <span class="subs"
-              style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">구독하기</span></button>
+          <button type="button" class="btn_image" id="img_btn">
+            <div class="subs" style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">
+              <img id="subsImg" src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/subscribe.png"
+                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
+              <span id="subsText">
+                Subscribe</span>
+            </div>
+          </button>
 
 
 
@@ -839,70 +850,98 @@
                 <div class="gallery-item-info">
                 </div>
 
-                <a data-fancybox="gallery" href="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_05.jpg">
-                  <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_05.jpg" class="gallery-image" alt="">
+                <a data-fancybox="gallery"
+                  href="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_05.jpg">
+                  <img
+                    src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_05.jpg"
+                    class="gallery-image" alt="">
                 </a>
                 <div class="gallery-item-info">
                 </div>
 
-                <a data-fancybox="gallery" href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_02.jpg">
-                  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_02.jpg" class="gallery-image" alt="">
-                </a>
-                <div class="gallery-item-info">
-                </div>
-
-
-                <a data-fancybox="gallery" href="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20201013_014135033.jpg">
-                  <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20201013_014135033.jpg" class="gallery-image" alt="">
-                </a>
-                <div class="gallery-item-info">
-                </div>
-
-
-                <a data-fancybox="gallery" href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_01.jpg">
-                  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_01.jpg" class="gallery-image" alt="">
+                <a data-fancybox="gallery"
+                  href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_02.jpg">
+                  <img
+                    src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_02.jpg"
+                    class="gallery-image" alt="">
                 </a>
                 <div class="gallery-item-info">
                 </div>
 
 
-                <a data-fancybox="gallery" href="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_06.jpg">
-                  <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_06.jpg" class="gallery-image" alt="">
+                <a data-fancybox="gallery"
+                  href="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20201013_014135033.jpg">
+                  <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20201013_014135033.jpg"
+                    class="gallery-image" alt="">
                 </a>
                 <div class="gallery-item-info">
                 </div>
 
 
-                <a data-fancybox="gallery" href="https://tistory3.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_04.jpg">
-                  <img src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_04.jpg" class="gallery-image" alt="">
+                <a data-fancybox="gallery"
+                  href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_01.jpg">
+                  <img
+                    src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_01.jpg"
+                    class="gallery-image" alt="">
                 </a>
                 <div class="gallery-item-info">
                 </div>
 
 
-                <a data-fancybox="gallery" href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_09.jpg">
-                  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_09.jpg" class="gallery-image" alt="">
+                <a data-fancybox="gallery"
+                  href="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_06.jpg">
+                  <img
+                    src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_06.jpg"
+                    class="gallery-image" alt="">
                 </a>
                 <div class="gallery-item-info">
                 </div>
 
 
-                <a data-fancybox="gallery" href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_03.jpg">
-                  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_03.jpg" class="gallery-image" alt="">
+                <a data-fancybox="gallery"
+                  href="https://tistory3.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_04.jpg">
+                  <img
+                    src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_04.jpg"
+                    class="gallery-image" alt="">
                 </a>
                 <div class="gallery-item-info">
                 </div>
 
 
-                <a data-fancybox="gallery" href="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293.jpg">
-                  <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293.jpg" class="gallery-image" alt="">
+                <a data-fancybox="gallery"
+                  href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_09.jpg">
+                  <img
+                    src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_09.jpg"
+                    class="gallery-image" alt="">
                 </a>
                 <div class="gallery-item-info">
                 </div>
 
 
-                <a data-fancybox="gallery" href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_08.jpg">
-                  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_08.jpg" class="gallery-image" alt="">
+                <a data-fancybox="gallery"
+                  href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_03.jpg">
+                  <img
+                    src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_03.jpg"
+                    class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
+                </div>
+
+
+                <a data-fancybox="gallery"
+                  href="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293.jpg">
+                  <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293.jpg"
+                    class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
+                </div>
+
+
+                <a data-fancybox="gallery"
+                  href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_08.jpg">
+                  <img
+                    src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_08.jpg"
+                    class="gallery-image" alt="">
                 </a>
                 <div class="gallery-item-info">
                 </div>
@@ -925,36 +964,14 @@
       </div>
 
 
-      <!-- <header id="header">
-          <h1><a href="[##_blog_link_##]">[##_title_##]</a></h1>
-          <button type="button" class="mobile-menu"><span>메뉴</span></button>
-          <div class="menu">
 
-            <div class="social-link">
-              <s_if_var_sns-pinterest><a href="[##_var_sns-pinterest_##]" class="pinterest">Pinterest</a>
-              </s_if_var_sns-pinterest>
-              <s_if_var_sns-facebook><a href="[##_var_sns-facebook_##]" class="facebook">Facebook</a>
-              </s_if_var_sns-facebook>
-              <s_if_var_sns-twitter><a href="[##_var_sns-twitter_##]" class="twitter">Twitter</a></s_if_var_sns-twitter>
-              <s_if_var_sns-instagram><a href="[##_var_sns-instagram_##]" class="instagram">Instagram</a>
-              </s_if_var_sns-instagram>
-            </div>
-            <p>POWERED BY TISTORY</p>
-          </div>
-          <div class="search">
-            <s_search>
-              <input type="text" name="[##_search_name_##]" value="[##_search_text_##]" placeholder="검색내용을 입력하세요."
-                onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
-              <button type="submit" onclick="[##_search_onclick_submit_##]">검색</button>
-            </s_search>
-          </div>
-        </header> -->
 
 
       <hr>
 
       <hr>
 
+    </div>
     </div>
     </div>
 
@@ -973,78 +990,7 @@
         }
       }
     </script>
-    <!-- <script>
-      /* hideAndShow Storage */
-      $(document).ready(function ($) {
 
-
-        if (Modernizr.localstorage) {
-
-
-          $('#img_btn_storage').click(function (a) {
-            if ($('#inFolder').css('display') == 'none') {
-              localStorage.setItem('subscribed', true);
-              localStorage.clear();
-              $('#inFolder').show(100);
-            }
-            else {
-              localStorage.setItem('subscribed', true);
-              $('#inFolder').hide(100);
-            }
-          });
-
-          const is_subscribed = localStorage.getItem('subscribed');
-
-          if (is_subscribed) {
-            console.log('localStorage')
-            $('#inFolder').hide(100);
-          }
-
-          if (!is_subscribed) {
-            console.log('no localStorage');
-            $('#inFolder').show(100);
-          }
-
-        }
-
-      });
-    </script> -->
-
-
-    <!-- <script>
-      $(document).ready(function ($) {
-
-        if (Modernizr.localstorage) {
-
-
-          $('#img_btn_storage_profile').click(function (e) {
-            if ($('#profileContent').css('display') == 'none') {
-              localStorage.setItem('subscribed2', true);
-              localStorage.clear();
-              $('#profileContent').show(100);
-            }
-            else {
-              localStorage.setItem('subscribed2', true);
-              $('#profileContent').hide(100);
-            }
-          });
-
-          const is_subscribed = localStorage.getItem('subscribed2');
-
-          if (is_subscribed) {
-            console.log('localStorage')
-            $('#profileContent').hide(100);
-          }
-
-          if (!is_subscribed) {
-            console.log('no localStorage');
-            $('#profileContent').show(100);
-          }
-
-        }
-
-      });
-    </script> -->
 
     <script>
       $('#innerPost').click(function () {
@@ -1066,23 +1012,7 @@
 
     </script>
 
-    <!-- <script>
-   function hideDiv() {
-      $(".hideSessionInFolder").click(function () {
-        $("#inFolder").stop().toggle("fast",function () {
-          sessionStorage.setItem("show-hide-inFolder", $("#inFolder").css("display"));
-          console.log(sessionStorage.getItem("show-hide-inFolder"))
-        });
-      });
 
-      if (sessionStorage.getItem("show-hide-inFolder")) {
-        $("#inFolder").css("display", sessionStorage.getItem("show-hide-inFolder"));
-      }
-    }
-    $(document).ready(function () {
-      hideDiv();
-    });
-</script> -->
     <script>
 
 
@@ -1130,21 +1060,23 @@
       /* 사이드 바에 추가한 구독 링크를 클릭하면 본문 내의 숨겨져 있는 구독 버튼을 클릭하고 페이지 새로고침 */
       $(".subs").click(function () {
         $(".btn_menu_toolbar.btn_subscription").trigger("click");
-        setTimeout(function () { location.reload() }, 500);
+        location.reload()
       });
 
       /* 사이드 바의 구독 링크의 텍스트를 현재의 구독상태에 맞게 바꾸기 */
       $(document).ready(function () {
         if ($(".btn_tool .txt_state").text() == "구독중") {
-          $(".subs").text("구독중")
+          $("#subsImg").attr("src", "https://tistory2.daumcdn.net/tistory/4706624/skin/images/subscribed.png");
         }
+
       });
+
     </script>
 
     <script></script>
   </s_t3>
 
-
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fc7851441748898"></script>
 </body>
 
 </html>
