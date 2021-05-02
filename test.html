@@ -1,27 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-                    
-<!-- 1. Add latest jQuery and fancybox files -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"
+  integrity="sha256-PsB+5ZEsBlDx9Fi/GXc1bZmC7wEQzZK4bM/VwNm1L6c="
+  crossorigin="anonymous"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <style>
+  body {
+background: #786ff0;
+}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+.title { 
+  font: 3em Arial;
+  color:#fff;
+}
 
+.ripple {
+   width: 10px;
+   height: 10px;
+   background-color: transparent;
+   position: fixed;
+   border-radius: 50%;
+   border: 1px solid #ffffff59;
+}
 
-
-<!-- 2. Create links -->
-
-
+@keyframes ripple-effect {
+   to {
+      transform:scale(15);
+      opacity: 0.01;
+   }
+}
+  </style>
 </head>
 <body>
-    <a data-fancybox="gallery" href=""><img src=""></a>
-<a data-fancybox="gallery" href="https://www.wallpapertip.com/wmimgs/76-768870_windows-xp-wallpaper-best-of-emily-is-away.jpg"><img src="https://www.wallpapertip.com/wmimgs/76-768870_windows-xp-wallpaper-best-of-emily-is-away.jpg"></a>
+ 
+
+<script>
+  
+document.onclick = () => applyCursorRippleEffect(event);
+
+function applyCursorRippleEffect(e) {
+   const ripple = document.createElement("div");
+  
+   ripple.className = "ripple";
+   document.body.appendChild(ripple);
+
+  ripple.style.left = `${e.clientX}px`;
+  ripple.style.top = `${e.clientY}px`; 
+   ripple.style.animation = `ripple-effect .4s  linear`;
+   ripple.onanimationend = () => {
+     document.body.removeChild(ripple);
+     
+   }
+  
+}
+
+// extra and optional part:
+
+const all = document.body.getElementsByTagName("*");
+for (var i = 0;  i < all.length; ++i) {
+  all[i].onclick = (event) => event.stopPropagation();
+}
+
+// If you remove this part you will realise  the ripple overlap. If you select the h1 element in the body the ripple is triggered. Perhaps you don't want that behaviour (the event bubbling down to body children), and so you may add this code. ITS DANGEROUS: for this occasion you may want, but there is specific cases wherein you don't want it at all. Its annoying, just like the discussion o Dev.to pointed out. This pen is simple, so it hasn't such problems. Links, buttons, css hovers, still work, but the ripple don't, that is, it will trigger only where you specifiy: body. As I said, there are possibily occasions you will have to specifiy which kind of elements won't receive this behaviour. This part is general, all elements in body don't receive propagation from its father.
+
+</script>
 </body>
 </html>

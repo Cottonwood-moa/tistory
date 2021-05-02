@@ -1,0 +1,53 @@
+<?xml version="1.1" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>Poster</name>
+		<version>1.0</version>
+		<description>
+			<![CDATA[ CottonWood made  ]]>
+		</description>
+		<license>
+			<![CDATA[ License ]]>
+		</license>
+	</information>
+	<author>
+		<name>CottonWood</name>
+		<!-- <homepage>http://www.tistory.com</homepage> -->
+		<email>blog_geon@naver.com</email>
+	</author>
+	<default>
+		<recentEntries>5</recentEntries>
+		<recentComments>4</recentComments>
+		<recentTrackbacks>4</recentTrackbacks>
+		<itemsOnGuestbook>10</itemsOnGuestbook>
+		<tagsInCloud>30</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>1</expandComment>
+		<lengthOfRecentNotice>25</lengthOfRecentNotice>
+		<lengthOfRecentEntry>27</lengthOfRecentEntry>
+		<lengthOfRecentComment>30</lengthOfRecentComment>
+		<lengthOfRecentTrackback>30</lengthOfRecentTrackback>
+		<lengthOfLink>30</lengthOfLink>
+		<showListOnCategory>1</showListOnCategory>
+		<showListOnArchive>1</showListOnArchive>
+		<commentMessage>
+			<none>0</none>
+			<single>1</single>
+		</commentMessage>
+		<trackbackMessage>
+			<none>0</none>
+			<single>1</single>
+		</trackbackMessage>
+		<tree>
+			<color>000000</color>
+			<bgColor>ffffff</bgColor>
+			<activeColor>000000</activeColor>
+			<activeBgColor>eeeeee</activeBgColor>
+			<labelLength>27</labelLength>
+			<showValue>1</showValue>
+		</tree>
+		<contentWidth>860</contentWidth>
+	</default>
+	
+	
+</skin>

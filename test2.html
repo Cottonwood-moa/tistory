@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+        integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw=="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+
+
+
+
+    <button id="img_btn_storage">Button</button>
+    <div id="inFolder" style="display: none;">
+        <p>Sign up form</p>
+    </div>
+
+    <!-- <button id="img_btn_storage2">Button</button>
+    <div id="inFolder2" style="display: none;">
+        <p>Sign up form</p>
+    </div> -->
+
+
+
+
+    <script>
+
+        // function AAA(elem) {
+
+        //     $(document).ready(function ($) {
+
+        //         if (Modernizr.localstorage) {
+        //             $('#img_btn_storage2')(function () {
+        //             if ($(elem).css('display') == 'none') {
+        //                 localStorage.setItem('subscribed', true);
+        //                 localStorage.clear();
+        //                 $(elem).show();
+        //             }
+        //             else {
+        //                 localStorage.setItem('subscribed', true);
+        //                 $(elem).hide();
+        //             }
+        //         });
+
+        //             const is_subscribed = localStorage.getItem('subscribed');
+
+        //             if (is_subscribed) {
+        //                 console.log('localStorage')
+        //                 $(elem).hide();
+        //             }
+
+        //             if (!is_subscribed) {
+        //                 console.log('no localStorage');
+        //                 $(elem).show();
+        //             }
+
+        //         }
+
+        //     });
+        // }
+
+
+        
+        $(document).ready(function ($) {
+
+            if (Modernizr.localstorage) {
+
+
+                $('#img_btn_storage2').click(function (e) {
+                    if ($('#inFolder2').css('display') == 'none') {
+                        localStorage.setItem('subscribed', true);
+                        localStorage.clear();
+                        $('#inFolder2').show();
+                    }
+                    else {
+                        localStorage.setItem('subscribed', true);
+                        $('#inFolder2').hide();
+                    }
+                });
+
+                const is_subscribed = localStorage.getItem('subscribed');
+
+                if (is_subscribed) {
+                    console.log('localStorage')
+                    $('#inFolder2').hide();
+                }
+
+                if (!is_subscribed) {
+                    console.log('no localStorage');
+                    $('#inFolder2').show();
+                    // $('#show-button').hide();
+                }
+
+            }
+
+        });
+    </script>
+<script>
+     $(document).ready(function ($) {
+
+if (Modernizr.localstorage) {
+
+
+    $('#img_btn_storage').click(function (e) {
+        if ($('#inFolder').css('display') == 'none') {
+            localStorage.setItem('subscribed', true);
+            localStorage.clear();
+            $('#inFolder').show();
+        }
+        else {
+            localStorage.setItem('subscribed', true);
+            $('#inFolder').hide();
+        }
+    });
+
+    const is_subscribed = localStorage.getItem('subscribed');
+
+    if (is_subscribed) {
+        console.log('localStorage')
+        $('#inFolder').hide();
+    }
+
+    if (!is_subscribed) {
+        console.log('no localStorage');
+        $('#inFolder').show();
+        // $('#show-button').hide();
+    }
+
+}
+
+});
+</script>
+</script>
+    
+</body>
+
+</html>

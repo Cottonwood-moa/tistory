@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test {
+            display: block;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .hidden {
+            /*display: none;*/
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-3">
+            <span id="spntest" class='test'>
+                Some Example Text
+            </span>
+        </div>
+    </div>
+
+    <script>
+        //On load of DOM, check if localStorage has items to hide
+        document.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem("hiddenElements") !== null) {
+                let hiddenEls = JSON.parse(localStorage.getItem("hiddenElements"));
+                for (let a = 0; a < hiddenEls.length; a++) {
+                    if (hiddenEls[a].hidden) {
+                        document.getElementById(hiddenEls[a].id).classList.add('hidden');
+                    }
+                }
+            }
+        });
+
+
+        //get elements to add click event
+        const items = document.getElementsByClassName('test');
+
+        //iterate the elements to add click events
+        for (let z = 0; z < items.length; z++) {
+            items[z].addEventListener('click', () => shHide(items[z].id, null));
+        }
+
+        //Modify as necessary
+        function shHide(elementid, buid) {
+            const myel = document.getElementById(elementid);
+
+            let hidden = false;
+            if (myel.classList.contains('hidden')) {
+                myel.classList.remove('hidden');
+            } else {
+                myel.classList.add('hidden');
+                hidden = true;
+            }
+
+            if (localStorage.getItem("hiddenElements") !== null) {
+                let hiddenEls = JSON.parse(localStorage.getItem("hiddenElements"));
+                if (hiddenEls.filter(a => a.id === elementid).length) {
+                    const foundIndex = hiddenEls.findIndex(x => x.id === elementid);
+                    items[foundIndex].hidden = hidden;
+                } else {
+                    hiddenEls.push({ id: elementid, hidden: hidden });
+                }
+
+                localStorage.setItem("hiddenElements", JSON.stringify(hiddenEls));
+            } else {
+                localStorage.setItem("hiddenElements", JSON.stringify([{ id: elementid, hidden: hidden }]));
+            }
+        }
+    </script>
+</body>
+
+</html>

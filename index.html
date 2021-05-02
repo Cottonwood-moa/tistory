@@ -6,21 +6,25 @@
   <meta name="viewport"
     content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
   <title>[##_page_title_##]</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+    integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw=="
+    crossorigin="anonymous"></script>
 
-<!-- 1. Add latest jQuery and fancybox files -->
+  <!-- 1. Add latest jQuery and fancybox files -->
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
 </head>
@@ -39,590 +43,726 @@
     </div>
 
     <div id="wrap"
-      style="background-image: url('https://www.wallpapertip.com/wmimgs/76-768870_windows-xp-wallpaper-best-of-emily-is-away.jpg');">
+      style="background-image: url('https://tistory3.daumcdn.net/tistory/4707383/skin/images/wallpaperbetter.jpg');">
 
 
 
-      <div id="container">
-        <div id="mainContent"
-          style="overflow:auto;  background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
-          <div id="contentHeader">
-            <div id="goBackButton"
-              style="width: 50%; font-size: 2rem; text-align: left; margin-left: 5%; margin-top: 5%;"><button
-                onclick="goBack()"><i class="fas fa-arrow-left"></i></button></div>
-            <div id="hideButton"
-              style="width: 50%;font-size: 1rem; text-align: right; margin-right: 5%; margin-top: 5%;"><button
-                onclick="hideAndShow('#mainContent')"><i class="fa fa-times fa-2x"></i></button></div>
+      <div id="mainContent"
+        style="overflow-y:auto; overflow-x:hidden;  background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
+
+
+
+        <div id="contentHeader">
+          <h1 id="mainContentTitle">
+            <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/2.png">
+            <a href="[##_blog_link_##]">[##_title_##]</a>
+          </h1>
+
+          <!-- <div id="goBackButton"
+              style=" font-size: 2rem; text-align: left; margin-left: 5%; margin-top: 5%;"><button
+                onclick="goBack()"><i class="fas fa-arrow-left"></i></button></div> -->
+
+          <div id="hideButton" style="font-size: 1rem; text-align: right; margin-right: 1%; width: 100%;">
+            <button onclick="goBack()"><i class="fas fa-arrow-left fa-2x"></i></button>
+
+            <i class="hideSessionMainContent fa fa-times fa-2x" style="cursor: pointer; padding-left: 5%;"></i>
+
+
           </div>
-          <section class="container">
-            [##_revenue_list_upper_##]
-            <article id="content">
-              <s_cover_group>
-                <s_cover_rep>
-                  <s_cover name='cover-thumbnail-list'>
-                    <div class='cover-thumbnail-list'>
-                      <div class="inner">
-                        <h2>[##_cover_title_##]</h2>
-                        <ul>
-                          <s_cover_item>
-                            <li>
-                              <a href="[##_cover_item_url_##]">
-                                <span class="thum">
-                                  <s_cover_item_thumbnail><img
-                                      src="//i1.daumcdn.net/thumb/C264x200/?fname=[##_cover_item_thumbnail_##]" alt="">
-                                  </s_cover_item_thumbnail>
-                                </span>
-                                <s_cover_item_article_info>
-                                  <span class="category">[##_cover_item_category_##]</span>
-                                </s_cover_item_article_info>
-                                <span class="title">[##_cover_item_title_##]</span>
-                              </a>
-                            </li>
-                          </s_cover_item>
-                        </ul>
-                      </div>
-                    </div>
-                  </s_cover>
+        </div>
+        <div class="cover-footer">
+          <div id="mainMenu">
+            <div id="menuEle" style="display: flex; padding-top: 2%;">
 
-                  <s_cover name='cover-slider'>
-                    <div class="cover-slider">
+              <a href="https://cottonwood-moa.tistory.com/">
+                <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/home.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%; font-weight: bold; padding-top: 10%;">Home</div></button>
+              </a>
+
+              <a href="https://cottonwood-moa.tistory.com/guestbook">
+                <img src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/open-book.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Guestbook</div></button>
+              </a>
+              <a href="https://cottonwood-moa.tistory.com/category/Node.js">
+                <img src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/nodejs.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Node.js</div></button>
+              </a>
+              <a href="https://cottonwood-moa.tistory.com/category/HTML%2BCSS">
+                <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/html-5.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">HTML+CSS</div></button>
+              </a>
+              <a href="https://cottonwood-moa.tistory.com/category/%EC%9D%BC%EC%83%81">
+                <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/calendar.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Life</div></button>
+              </a>
+              <a href="https://cottonwood-moa.tistory.com/category/JavaScript">
+                <img src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/javascript.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">JavaScript</div></button>
+              </a>
+              <a href="https://cottonwood-moa.tistory.com/category/Python">
+                <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/python.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Python</div></button>
+              </a>
+              <a href="https://cottonwood-moa.tistory.com/category/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">
+                <img src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/connection.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Algorithm</div></button>
+              </a>
+              <a href="https://cottonwood-moa.tistory.com/category/%EA%B9%83">
+                <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/github.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">Git</div></button>
+              </a>
+              <a href="https://cottonwood-moa.tistory.com/category/MySQL">
+                <img src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/mysql.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%; font-weight: bold;padding-top: 10%;">MySQL</div></button>
+              </a>
+              <a href="https://cottonwood-moa.tistory.com/category/Service">
+                <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/app.png"
+                  style="width: 60%;margin-left: 2%; margin-right: 2%;margin-top:2%">
+                <div style="font-size: 10%;font-weight: bold; padding-top: 10%;">Service</div></button>
+              </a>
+            </div>
+
+          </div>
+
+
+
+
+        </div>
+        <section class="container">
+          [##_revenue_list_upper_##]
+          <article id="content">
+            <s_cover_group>
+              <s_cover_rep>
+                <s_cover name='cover-thumbnail-list'>
+                  <div class='cover-thumbnail-list'>
+                    <div class="inner">
+                      <h2>[##_cover_title_##]</h2>
                       <ul>
                         <s_cover_item>
-                          <li<s_cover_item_thumbnail> style="background-image:url([##_cover_item_thumbnail_##]);"
-                            </s_cover_item_thumbnail>>
-                            <a href="[##_cover_item_url_##]" class="text-box">
+                          <li>
+                            <a href="[##_cover_item_url_##]">
+                              <span class="thum">
+                                <s_cover_item_thumbnail><img
+                                    src="//i1.daumcdn.net/thumb/C264x200/?fname=[##_cover_item_thumbnail_##]" alt="">
+                                </s_cover_item_thumbnail>
+                              </span>
                               <s_cover_item_article_info>
                                 <span class="category">[##_cover_item_category_##]</span>
                               </s_cover_item_article_info>
                               <span class="title">[##_cover_item_title_##]</span>
-                              <span class="btn view">더보기</span>
                             </a>
-                            </li>
+                          </li>
                         </s_cover_item>
                       </ul>
                     </div>
-                  </s_cover>
-
-                  <s_cover name='cover-masonry'>
-                    <div class="cover-masonry">
-                      <div class="inner">
-                        <h2>[##_cover_title_##]</h2>
-                        <ul>
-                          <s_cover_item>
-                            <li>
-                              <a href="[##_cover_item_url_##]">
-                                <span class="thum">
-                                  <s_cover_item_thumbnail><img
-                                      src="//i1.daumcdn.net/thumb/R600x0/?fname=[##_cover_item_thumbnail_##]" alt="">
-                                  </s_cover_item_thumbnail>
-                                </span>
-                                <s_cover_item_article_info>
-                                  <span class="category">[##_cover_item_category_##]</span>
-                                </s_cover_item_article_info>
-                                <span class="title">[##_cover_item_title_##]</span>
-                                <span class="excerpt">[##_cover_item_summary_##]</span>
-                              </a>
-                            </li>
-                          </s_cover_item>
-                        </ul>
-                      </div>
-                    </div>
-                  </s_cover>
-
-                  <s_cover name='cover-list'>
-                    <div class="cover-list">
-                      <div class="inner">
-                        <h2>[##_cover_title_##]</h2>
-                        <ul>
-                          <s_cover_item>
-                            <li>
-                              <a href="[##_cover_item_url_##]">
-                                <figure>
-                                  <s_cover_item_thumbnail><img
-                                      src="//i1.daumcdn.net/thumb/C600x600/?fname=[##_cover_item_thumbnail_##]" alt="">
-                                  </s_cover_item_thumbnail>
-                                </figure>
-                                <s_cover_item_article_info>
-                                  <span class="category">[##_cover_item_category_##]</span>
-                                </s_cover_item_article_info>
-                                <span class="title">[##_cover_item_title_##]</span>
-                                <span class="excerpt">[##_cover_item_summary_##]</span>
-                              </a>
-                            </li>
-                          </s_cover_item>
-                        </ul>
-                      </div>
-                    </div>
-                  </s_cover>
-
-                  <s_cover name='cover-gallery'>
-                    <div class="cover-gallery">
-                      <div class="inner">
-                        <h2>[##_cover_title_##]</h2>
-                        <ul>
-                          <s_cover_item>
-                            <li>
-                              <a href="[##_cover_item_url_##]">
-                                <figure>
-                                  <s_cover_item_thumbnail><img
-                                      src="//i1.daumcdn.net/thumb/C600x600/?fname=[##_cover_item_thumbnail_##]" alt="">
-                                  </s_cover_item_thumbnail>
-                                </figure>
-                                <span class="title">[##_cover_item_title_##]</span>
-                              </a>
-                            </li>
-                          </s_cover_item>
-                        </ul>
-                      </div>
-                    </div>
-                  </s_cover>
-
-                </s_cover_rep>
-
-
-              </s_cover_group>
-
-              <s_page_rep>
-                <div class="hgroup">
-                  <h1>[##_article_rep_title_##]</h1>
-                </div>
-                <div class="entry-content">
-                  [##_article_rep_desc_##]
-                </div>
-              </s_page_rep>
-
-              <s_notice_rep>
-                <div class="hgroup">
-                  <h1>[##_notice_rep_title_##]</h1>
-                  <div class="post-meta">
-                    <span class="author">[##__notice_rep_author_##]</span>
-                    <span class="date">[##_notice_rep_date_##]</span>
-                    <s_ad_div>
-                      <span><a href="[##_s_ad_m_link_##]">수정</a></span>
-                      <span><a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a></span>
-                    </s_ad_div>
                   </div>
-                </div>
-                <div class="entry-content">
-                  [##_notice_rep_desc_##]
-                </div>
-              </s_notice_rep>
+                </s_cover>
 
-              <s_list>
-                <div class="post-header">
-                  <span>
-                    <h1>[##_list_conform_##]</h1>
-                  </span>
-                  <span style="padding-left: 5px; font-weight: bold;">([##_list_count_##])</h< /span>
-                    <div class="list-type">
-                      <button type="button" class="thum">썸네일형</button>
-                      <button type="button" class="list">리스트형</button>
-                    </div>
-                </div>
-              </s_list>
+                <s_cover name='cover-slider'>
+                  <div class="cover-slider">
+                    <ul>
+                      <s_cover_item>
+                        <li<s_cover_item_thumbnail> style="background-image:url([##_cover_item_thumbnail_##]);"
+                          </s_cover_item_thumbnail>>
+                          <a href="[##_cover_item_url_##]" class="text-box">
+                            <s_cover_item_article_info>
+                              <span class="category">[##_cover_item_category_##]</span>
+                            </s_cover_item_article_info>
+                            <span class="title">[##_cover_item_title_##]</span>
+                            <span class="btn view">더보기</span>
+                          </a>
+                          </li>
+                      </s_cover_item>
+                    </ul>
+                  </div>
+                </s_cover>
 
-              <div class="inner">
-                <s_article_protected>
-                  <s_index_article_rep>
-                    <div class="post-item">
-                      <a href="[##_article_rep_link_##]">
-                        <span class="thum"></span>
-                        <span class="title">[##_article_rep_title_##]</span>
-                        <span class="excerpt protected">보호되어 있는 글입니다.</span>
-                      </a>
+                <s_cover name='cover-masonry'>
+                  <div class="cover-masonry">
+                    <div class="inner">
+                      <h2>[##_cover_title_##]</h2>
+                      <ul>
+                        <s_cover_item>
+                          <li>
+                            <a href="[##_cover_item_url_##]">
+                              <span class="thum">
+                                <s_cover_item_thumbnail><img
+                                    src="//i1.daumcdn.net/thumb/R600x0/?fname=[##_cover_item_thumbnail_##]" alt="">
+                                </s_cover_item_thumbnail>
+                              </span>
+                              <s_cover_item_article_info>
+                                <span class="category">[##_cover_item_category_##]</span>
+                              </s_cover_item_article_info>
+                              <span class="title">[##_cover_item_title_##]</span>
+                              <span class="excerpt">[##_cover_item_summary_##]</span>
+                            </a>
+                          </li>
+                        </s_cover_item>
+                      </ul>
                     </div>
-                  </s_index_article_rep>
-                  <s_permalink_article_rep>
-                    <div class="hgroup">
-                      <div class="category">보호글</div>
-                      <h1>[##_article_rep_title_##] </h1>
-                      <div class="post-meta">
-                        <span class="author">[##_article_rep_author_##]</span>
-                        <span class="date">[##_article_rep_date_##]</span>
-                      </div>
-                    </div>
-                    <div class="entry-content">
-                      [##_article_rep_desc_##]
-                      <form class="protected_form" onsubmit="[##_article_dissolve_##]">
-                        <p>보호되어 있는 글입니다.<br>
-                          내용을 보시려면 비밀번호를 입력하세요.</p>
-                        <fieldset>
-                          <input type="password" id="[##_article_password_##]" name="[##_article_password_##]" value=""
-                            placeholder="비밀번호" />
-                          <button type="submit" class="btn">입력</button>
-                        </fieldset>
-                      </form>
-                    </div>
-                  </s_permalink_article_rep>
-                </s_article_protected>
+                  </div>
+                </s_cover>
 
-                <s_article_rep>
-                  <s_index_article_rep>
-                    <div class="post-item">
-                      <a href="[##_article_rep_link_##]">
-                        <span class="thum">
-                          <s_article_rep_thumbnail>
-                            <img src="//i1.daumcdn.net/thumb/C264x200/?fname=[##_article_rep_thumbnail_raw_url_##]"
-                              alt="">
-                          </s_article_rep_thumbnail>
-                        </span>
-                        <span class="title">[##_article_rep_title_##]</span>
-                        <span class="excerpt">[##_article_rep_summary_##]</span>
-                      </a>
+                <s_cover name='cover-list'>
+                  <div class="cover-list">
+                    <div class="inner">
+                      <h2>[##_cover_title_##]</h2>
+                      <ul>
+                        <s_cover_item>
+                          <li>
+                            <a href="[##_cover_item_url_##]">
+                              <figure>
+                                <s_cover_item_thumbnail><img
+                                    src="//i1.daumcdn.net/thumb/C600x600/?fname=[##_cover_item_thumbnail_##]" alt="">
+                                </s_cover_item_thumbnail>
+                              </figure>
+                              <s_cover_item_article_info>
+                                <span class="category">[##_cover_item_category_##]</span>
+                              </s_cover_item_article_info>
+                              <span class="title">[##_cover_item_title_##]</span>
+                              <span class="excerpt">[##_cover_item_summary_##]</span>
+                            </a>
+                          </li>
+                        </s_cover_item>
+                      </ul>
                     </div>
-                  </s_index_article_rep>
-                  <s_permalink_article_rep>
-                    <div class="hgroup">
-                      <div class="category">[##_article_rep_category_##]</div>
-                      <h1>[##_article_rep_title_##] </h1>
-                      <div class="post-meta">
-                        <span class="author">[##_article_rep_author_##]</span>
-                        <span class="date">[##_article_rep_date_##]</span>
-                        <s_ad_div>
-                          <span><a href="[##_s_ad_m_link_##]">수정</a></span>
-                          <span><a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a></span>
-                        </s_ad_div>
-                      </div>
+                  </div>
+                </s_cover>
+
+                <s_cover name='cover-gallery'>
+                  <div class="cover-gallery">
+                    <div class="inner">
+                      <h2>[##_cover_title_##]</h2>
+                      <ul>
+                        <s_cover_item>
+                          <li>
+                            <a href="[##_cover_item_url_##]">
+                              <figure>
+                                <s_cover_item_thumbnail><img
+                                    src="//i1.daumcdn.net/thumb/C600x600/?fname=[##_cover_item_thumbnail_##]" alt="">
+                                </s_cover_item_thumbnail>
+                              </figure>
+                              <span class="title">[##_cover_item_title_##]</span>
+                            </a>
+                          </li>
+                        </s_cover_item>
+                      </ul>
                     </div>
-                    <div class="entry-content">
-                      [##_article_rep_desc_##]
-                    </div>
-                    <s_tag_label>
-                      <div class="tags">
-                        <h2>태그</h2>
-                        <div class="items">
-                          [##_tag_label_rep_##]
-                        </div>
-                      </div>
-                    </s_tag_label>
+                  </div>
+                </s_cover>
 
-                    <s_article_related>
-                      <div class="related-articles">
-                        <h2><strong>'[##_article_rep_category_##]'</strong> Related Articles</h2>
-                        <ul>
-                          <s_article_related_rep>
-                            <li>
-                              <a href="[##_article_related_rep_link_##]">
-                                <span class="thum">
-                                  <s_article_related_rep_thumbnail>
-                                    <img
-                                      src="//i1.daumcdn.net/thumb/C264x200/?fname=[##_article_related_rep_thumbnail_link_##]"
-                                      alt="">
-                                  </s_article_related_rep_thumbnail>
-                                </span>
-                                <span class="title">[##_article_related_rep_title_##]</span>
-                              </a>
-                            </li>
-                          </s_article_related_rep>
-                        </ul>
-                      </div>
-                    </s_article_related>
+              </s_cover_rep>
 
-                    <s_rp>
-                      <div class="comments">
-                        <s_rp_container>
-                          <div class="comment-list">
-                            <ul>
-                              <s_rp_rep>
-                                <li id="[##_rp_rep_id_##]">
-                                  <div class="author-meta">
-                                    <img src="[##_rp_rep_logo_##]" class="avatar" alt="">
-                                    <span class="nickname">[##_rp_rep_name_##]</span>
-                                    <span class="date">[##_rp_rep_date_##]</span>
-                                  </div>
-                                  <p>[##_rp_rep_desc_##]</p>
-                                  <div class="control">
-                                    <a href="[##_rp_rep_link_##]">댓글주소</a>
-                                    <a href="#" onclick="[##_rp_rep_onclick_delete_##]">수정/삭제</a>
-                                    <a href="#" onclick="[##_rp_rep_onclick_reply_##]">댓글쓰기</a>
-                                  </div>
-                                  <s_rp2_container>
-                                    <ul>
-                                      <s_rp2_rep>
-                                        <li id="[##_rp_rep_id_##]">
-                                          <div class="author-meta">
-                                            <img src="[##_rp_rep_logo_##]" class="avatar" alt="">
-                                            <span class="nickname">[##_rp_rep_name_##]</span>
-                                            <span class="date">[##_rp_rep_date_##]</span>
-                                          </div>
-                                          <p>[##_rp_rep_desc_##]</p>
-                                          <div class="control">
-                                            <a href="[##_rp_rep_link_##]">댓글주소</a>
-                                            <a href="#" onclick="[##_rp_rep_onclick_delete_##]">수정/삭제</a>
-                                          </div>
-                                        </li>
-                                      </s_rp2_rep>
-                                    </ul>
-                                  </s_rp2_container>
-                                </li>
-                              </s_rp_rep>
-                            </ul>
-                          </div>
-                        </s_rp_container>
 
-                        <s_rp_input_form>
-                          <div class="comment-form">
-                            <s_rp_member>
-                              <div class="field">
-                                <s_rp_guest>
-                                  <input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]"
-                                    placeholder="이름">
-                                  <input type="password" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]"
-                                    placeholder="암호">
-                                </s_rp_guest>
-                                <div class="secret">
-                                  <input type="checkbox" name="[##_rp_input_is_secret_##]" id="secret">
-                                  <label for="secret" tabindex="0">Secret</label>
-                                </div>
-                              </div>
-                            </s_rp_member>
-                            <textarea name="[##_rp_input_comment_##]" cols="" rows="4"
-                              placeholder="여러분의 소중한 댓글을 입력해주세요."></textarea>
-                            <div class="submit">
-                              <button type="submit" class="btn" onclick="[##_rp_onclick_submit_##]">댓글달기</button>
-                            </div>
-                          </div>
-                        </s_rp_input_form>
-                      </div>
-                    </s_rp>
+            </s_cover_group>
 
-                  </s_permalink_article_rep>
-                </s_article_rep>
+            <s_page_rep>
+              <div class="hgroup">
+                <h1>[##_article_rep_title_##]</h1>
               </div>
+              <div class="entry-content">
+                [##_article_rep_desc_##]
+              </div>
+            </s_page_rep>
 
-              <s_tag>
-                <div class="hgroup">
-                  <h1>태그</h1>
+            <s_notice_rep>
+              <div class="hgroup">
+                <h1>[##_notice_rep_title_##]</h1>
+                <div class="post-meta">
+                  <span class="author">[##__notice_rep_author_##]</span>
+                  <span class="date">[##_notice_rep_date_##]</span>
+                  <s_ad_div>
+                    <span><a href="[##_s_ad_m_link_##]">수정</a></span>
+                    <span><a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a></span>
+                  </s_ad_div>
                 </div>
-                <div class="tags">
-                  <div class="items">
-                    <s_tag_rep>
-                      <a href="[##_tag_link_##]">[##_tag_name_##]</a>
-                    </s_tag_rep>
+              </div>
+              <div class="entry-content">
+                [##_notice_rep_desc_##]
+              </div>
+            </s_notice_rep>
+
+            <s_list>
+              <div class="post-header">
+                <span>
+                  <h1>[##_list_conform_##]</h1>
+                </span>
+                <span style="padding-left: 5px; font-weight: bold;">([##_list_count_##])</h< /span>
+                  <div class="list-type">
+                    <button type="button" class="thum">썸네일형</button>
+                    <button type="button" class="list">리스트형</button>
                   </div>
-                </div>
-              </s_tag>
+              </div>
+            </s_list>
 
-              <s_guest>
-                <div class="guest_inner">
+            <div class="inner">
+              <s_article_protected>
+                <s_index_article_rep>
+                  <div class="post-item">
+                    <a href="[##_article_rep_link_##]">
+                      <span class="thum"></span>
+                      <span class="title">[##_article_rep_title_##]</span>
+                      <span class="excerpt protected">보호되어 있는 글입니다.</span>
+                    </a>
+                  </div>
+                </s_index_article_rep>
+                <s_permalink_article_rep>
                   <div class="hgroup">
-                    <h1>방명록</h1>
+                    <div class="category">보호글</div>
+                    <h1>[##_article_rep_title_##] </h1>
+                    <div class="post-meta">
+                      <span class="author">[##_article_rep_author_##]</span>
+                      <span class="date">[##_article_rep_date_##]</span>
+                    </div>
                   </div>
-                  <div class="comments">
-                    <s_guest_input_form>
-                      <div class="comment-form">
-                        <s_guest_member>
-                          <div class="field">
-                            <s_guest_form>
-                              <input type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]"
-                                placeholder="이름">
-                              <input type="password" name="[##_guest_input_password_##]" value="[##_guest_password_##]"
-                                placeholder="암호">
-                            </s_guest_form>
-                          </div>
-                        </s_guest_member>
-                        <textarea name="[##_guest_textarea_body_##]" cols="" rows="4"></textarea>
-                        <div class="submit">
-                          <button type="submit" class="btn" onclick="[##_guest_onclick_submit_##]">안부 남기기</button>
+                  <div class="entry-content">
+                    [##_article_rep_desc_##]
+                    <form class="protected_form" onsubmit="[##_article_dissolve_##]">
+                      <p>보호되어 있는 글입니다.<br>
+                        내용을 보시려면 비밀번호를 입력하세요.</p>
+                      <fieldset>
+                        <input type="password" id="[##_article_password_##]" name="[##_article_password_##]" value=""
+                          placeholder="비밀번호" />
+                        <button type="submit" class="btn">입력</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </s_permalink_article_rep>
+              </s_article_protected>
+
+              <s_article_rep>
+                <s_index_article_rep>
+                  <div class="post-item">
+                    <a href="[##_article_rep_link_##]">
+                      <span class="thum">
+                        <s_article_rep_thumbnail>
+                          <img src="//i1.daumcdn.net/thumb/C264x200/?fname=[##_article_rep_thumbnail_raw_url_##]"
+                            alt="">
+                        </s_article_rep_thumbnail>
+                      </span>
+                      <span class="title">[##_article_rep_title_##]</span>
+                      <span class="excerpt">[##_article_rep_summary_##]</span>
+                    </a>
+                  </div>
+                </s_index_article_rep>
+                <s_permalink_article_rep>
+                  <div class="hgroup">
+                    <div class="category">[##_article_rep_category_##]</div>
+                    <h1>[##_article_rep_title_##] </h1>
+                    <div class="post-meta">
+                      <span class="author">[##_article_rep_author_##]</span>
+                      <span class="date">[##_article_rep_date_##]</span>
+                      <s_ad_div>
+                        <span><a href="[##_s_ad_m_link_##]">수정</a></span>
+                        <span><a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a></span>
+                      </s_ad_div>
+                    </div>
+                  </div>
+                  <div class="entry-content">
+                    [##_article_rep_desc_##]
+                  </div>
+                  <s_tag_label>
+                    <div class="tags">
+                      <h2>태그</h2>
+                      <div class="items">
+                        [##_tag_label_rep_##]
+                      </div>
+                    </div>
+                  </s_tag_label>
+
+                  <s_article_related>
+                    <div class="related-articles">
+                      <h2><strong>'[##_article_rep_category_##]'</strong> Related Articles</h2>
+                      <ul>
+                        <s_article_related_rep>
+                          <li>
+                            <a href="[##_article_related_rep_link_##]">
+                              <span class="thum">
+                                <s_article_related_rep_thumbnail>
+                                  <img
+                                    src="//i1.daumcdn.net/thumb/C264x200/?fname=[##_article_related_rep_thumbnail_link_##]"
+                                    alt="">
+                                </s_article_related_rep_thumbnail>
+                              </span>
+                              <span class="title">[##_article_related_rep_title_##]</span>
+                            </a>
+                          </li>
+                        </s_article_related_rep>
+                      </ul>
+                    </div>
+                  </s_article_related>
+
+                  <s_rp>
+                    <div class="comments">
+                      <s_rp_container>
+                        <div class="comment-list">
+                          <ul>
+                            <s_rp_rep>
+                              <li id="[##_rp_rep_id_##]">
+                                <div class="author-meta">
+                                  <img src="[##_rp_rep_logo_##]" class="avatar" alt="">
+                                  <span class="nickname">[##_rp_rep_name_##]</span>
+                                  <span class="date">[##_rp_rep_date_##]</span>
+                                </div>
+                                <p>[##_rp_rep_desc_##]</p>
+                                <div class="control">
+                                  <a href="[##_rp_rep_link_##]">댓글주소</a>
+                                  <a href="#" onclick="[##_rp_rep_onclick_delete_##]">수정/삭제</a>
+                                  <a href="#" onclick="[##_rp_rep_onclick_reply_##]">댓글쓰기</a>
+                                </div>
+                                <s_rp2_container>
+                                  <ul>
+                                    <s_rp2_rep>
+                                      <li id="[##_rp_rep_id_##]">
+                                        <div class="author-meta">
+                                          <img src="[##_rp_rep_logo_##]" class="avatar" alt="">
+                                          <span class="nickname">[##_rp_rep_name_##]</span>
+                                          <span class="date">[##_rp_rep_date_##]</span>
+                                        </div>
+                                        <p>[##_rp_rep_desc_##]</p>
+                                        <div class="control">
+                                          <a href="[##_rp_rep_link_##]">댓글주소</a>
+                                          <a href="#" onclick="[##_rp_rep_onclick_delete_##]">수정/삭제</a>
+                                        </div>
+                                      </li>
+                                    </s_rp2_rep>
+                                  </ul>
+                                </s_rp2_container>
+                              </li>
+                            </s_rp_rep>
+                          </ul>
                         </div>
-                      </div>
-                    </s_guest_input_form>
+                      </s_rp_container>
 
-                    <s_guest_container>
-                      <div class="comment-list">
-                        <ul>
-                          <s_guest_rep>
-                            <li id="[##_guest_rep_id_##]">
-                              <div class="author-meta">
-                                <img src="//t1.daumcdn.net/tistory_admin/static/skin/avatar_default.gif" class="avatar"
-                                  alt="">
-                                <span class="nickname">[##_guest_rep_name_##]</span>
-                                <span class="date">[##_guest_rep_date_##]</span>
+                      <s_rp_input_form>
+                        <div class="comment-form">
+                          <s_rp_member>
+                            <div class="field">
+                              <s_rp_guest>
+                                <input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]"
+                                  placeholder="이름">
+                                <input type="password" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]"
+                                  placeholder="암호">
+                              </s_rp_guest>
+                              <div class="secret">
+                                <input type="checkbox" name="[##_rp_input_is_secret_##]" id="secret">
+                                <label for="secret" tabindex="0">Secret</label>
                               </div>
-                              <p>[##_guest_rep_desc_##]</p>
-                              <div class="control">
-                                <a href="#" onclick="[##_guest_rep_onclick_delete_##]">수정/삭제</a>
-                                <a href="#" onclick="[##_guest_rep_onclick_reply_##]">댓글쓰기</a>
-                              </div>
-                              <s_guest_reply_container>
-                                <ul>
-                                  <s_guest_reply_rep>
-                                    <li id="[##_guest_rep_id_##]">
-                                      <div class="author-meta">
-                                        <img src="//t1.daumcdn.net/tistory_admin/static/skin/avatar_default.gif"
-                                          class="avatar" alt="">
-                                        <span class="nickname">[##_guest_rep_name_##]</span>
-                                        <span class="date">[##_guest_rep_date_##]</span>
-                                      </div>
-                                      <p>[##_guest_rep_desc_##]</p>
-                                      <div class="control">
-                                        <a href="#" onclick="[##_guest_rep_onclick_delete_##]">수정/삭제</a>
-                                      </div>
-                                    </li>
-                                  </s_guest_reply_rep>
-                                </ul>
-                              </s_guest_reply_container>
-                            </li>
-                          </s_guest_rep>
-                        </ul>
+                            </div>
+                          </s_rp_member>
+                          <textarea name="[##_rp_input_comment_##]" cols="" rows="4"
+                            placeholder="여러분의 소중한 댓글을 입력해주세요."></textarea>
+                          <div class="submit">
+                            <button type="submit" class="btn" onclick="[##_rp_onclick_submit_##]">댓글달기</button>
+                          </div>
+                        </div>
+                      </s_rp_input_form>
+                    </div>
+                  </s_rp>
+
+                </s_permalink_article_rep>
+              </s_article_rep>
+            </div>
+
+            <s_tag>
+              <div class="hgroup">
+                <h1>태그</h1>
+              </div>
+              <div class="tags">
+                <div class="items">
+                  <s_tag_rep>
+                    <a href="[##_tag_link_##]">[##_tag_name_##]</a>
+                  </s_tag_rep>
+                </div>
+              </div>
+            </s_tag>
+
+            <s_guest>
+              <div class="guest_inner">
+                <div class="hgroup">
+                  <h1>방명록</h1>
+                </div>
+                <div class="comments">
+                  <s_guest_input_form>
+                    <div class="comment-form">
+                      <s_guest_member>
+                        <div class="field">
+                          <s_guest_form>
+                            <input type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]"
+                              placeholder="이름">
+                            <input type="password" name="[##_guest_input_password_##]" value="[##_guest_password_##]"
+                              placeholder="암호">
+                          </s_guest_form>
+                        </div>
+                      </s_guest_member>
+                      <textarea name="[##_guest_textarea_body_##]" cols="" rows="4"></textarea>
+                      <div class="submit">
+                        <button type="submit" class="btn" onclick="[##_guest_onclick_submit_##]">안부 남기기</button>
                       </div>
-                    </s_guest_container>
-                  </div>
-                </div>
-              </s_guest>
+                    </div>
+                  </s_guest_input_form>
 
-              <s_paging>
-                <div class="pagination">
-                  <a [##_prev_page_##] class="prev [##_no_more_prev_##]">이전</a>
-                  <s_paging_rep>
-                    <a [##_paging_rep_link_##]>[##_paging_rep_link_num_##]</a>
-                  </s_paging_rep>
-                  <a [##_next_page_##] class="next [##_no_more_next_##]">다음</a>
+                  <s_guest_container>
+                    <div class="comment-list">
+                      <ul>
+                        <s_guest_rep>
+                          <li id="[##_guest_rep_id_##]">
+                            <div class="author-meta">
+                              <img src="//t1.daumcdn.net/tistory_admin/static/skin/avatar_default.gif" class="avatar"
+                                alt="">
+                              <span class="nickname">[##_guest_rep_name_##]</span>
+                              <span class="date">[##_guest_rep_date_##]</span>
+                            </div>
+                            <p>[##_guest_rep_desc_##]</p>
+                            <div class="control">
+                              <a href="#" onclick="[##_guest_rep_onclick_delete_##]">수정/삭제</a>
+                              <a href="#" onclick="[##_guest_rep_onclick_reply_##]">댓글쓰기</a>
+                            </div>
+                            <s_guest_reply_container>
+                              <ul>
+                                <s_guest_reply_rep>
+                                  <li id="[##_guest_rep_id_##]">
+                                    <div class="author-meta">
+                                      <img src="//t1.daumcdn.net/tistory_admin/static/skin/avatar_default.gif"
+                                        class="avatar" alt="">
+                                      <span class="nickname">[##_guest_rep_name_##]</span>
+                                      <span class="date">[##_guest_rep_date_##]</span>
+                                    </div>
+                                    <p>[##_guest_rep_desc_##]</p>
+                                    <div class="control">
+                                      <a href="#" onclick="[##_guest_rep_onclick_delete_##]">수정/삭제</a>
+                                    </div>
+                                  </li>
+                                </s_guest_reply_rep>
+                              </ul>
+                            </s_guest_reply_container>
+                          </li>
+                        </s_guest_rep>
+                      </ul>
+                    </div>
+                  </s_guest_container>
                 </div>
-              </s_paging>
+              </div>
+            </s_guest>
 
-            </article>
-          </section>
-        </div>
+            <s_paging>
+              <div class="pagination">
+                <a [##_prev_page_##] class="prev [##_no_more_prev_##]">이전</a>
+                <s_paging_rep>
+                  <a [##_paging_rep_link_##]>[##_paging_rep_link_num_##]</a>
+                </s_paging_rep>
+                <a [##_next_page_##] class="next [##_no_more_next_##]">다음</a>
+              </div>
+            </s_paging>
+
+          </article>
+        </section>
+        <!-- footer -->
+
+
+        <!-- <div id="footerAll">
+          <div class="cover-footer">
+            <s_if_var_footer-image>
+            
+            </s_if_var_footer-image>
+            <s_if_var_footer-text>
+              <p>[##_var_footer-text_##]</p>
+            </s_if_var_footer-text>
+            <div class="social-link">
+              <s_if_var_sns-pinterest><a href="[##_var_sns-pinterest_##]" class="pinterest"><span
+                    class="">Pinterest</span></a></s_if_var_sns-pinterest>
+              <s_if_var_sns-facebook><a href="[##_var_sns-facebook_##]" class="facebook">Facebook</a>
+              </s_if_var_sns-facebook>
+              <s_if_var_sns-twitter><a href="[##_var_sns-twitter_##]" class="twitter">Twitter</a>
+              </s_if_var_sns-twitter>
+              <s_if_var_sns-instagram><a href="[##_var_sns-instagram_##]" class="instagram">Instagram</a>
+              </s_if_var_sns-instagram>
+            </div>
+            <nav class="menu">
+              [##_blog_menu_##]
+            </nav>
+          </div>
+          [##_revenue_list_lower_##]
+          <footer id="footer">
+            <p class="copyright">DESIGN BY <a href="#">TISTORY</a> <a href="[##_owner_url_##]" class="admin">관리자</a></p>
+          </footer> -->
+
+      </div>
+      <div id="container">
         <!-- folder  -->
         <div id="leftThing" style="width: 5rem; height: 50rem; font:white;">
-         
+          <button type="button" class="hideSessionProfile mobile-menu btn_image" id="img_btn"><img
+              src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/profile.png"
+              style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
+            <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">프로필</span></button>
 
-          <a href="https://cottonwood-test.tistory.com">
-            <button type="button" class="btn_image" id="img_btn">
-              <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+
+          <button type="button" class="hideSessionMainContent mobile-menu btn_image" id="img_btn"><img
+              src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/2.png"
+              style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
+            <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">게시글</span></button>
+
+          <a href="https://github.com/Cottonwood-moa">
+            <button type="button" class="btn_image" id="img_btn"><img
+                src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/github.png"
                 style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">전체 글</span>
-            </button>
+              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">깃허브</span></button>
           </a>
 
-        <a href="https://cottonwood-test.tistory.com/category/일상">
+          <a href="https://blog.naver.com/blog_geon">
+            <button type="button" class="btn_image" id="img_btn"><img
+                src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/naver.png"
+                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
+              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">NBLOG</span></button>
+          </a>
+
+          <a href="https://character-test.netlify.app/">
+            <button type="button" class="btn_image" id="img_btn"><img
+                src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/modal.png"
+                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
+              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">닮은캐릭터</span></button>
+          </a>
+
+          <a href="https://loverface.netlify.app/">
+            <button type="button" class="btn_image" id="img_btn"><img
+                src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/face.png"
+                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
+              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">궁합테스트</span></button>
+          </a>
+
           <button type="button" class="btn_image" id="img_btn"><img
-            src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-            style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-          <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">일상</span></button>
-        </a>
+              src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/subscribe.png"
+              style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
+            <span class="subs"
+              style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">구독하기</span></button>
 
-          <a href="https://cottonwood-test.tistory.com/category/Node.js">
-            <button type="button" class="btn_image" id="img_btn">
-              <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">node.js</span>
-            </button>
-          </a>
 
-          <a href="https://cottonwood-test.tistory.com/category/HTML+CSS">
-            <button type="button" class="btn_image" id="img_btn">
-              <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">HTML+CSS</span>
-            </button>
-          </a>
-
-          <a href="https://cottonwood-test.tistory.com/category/python">
-            <button type="button" class="btn_image" id="img_btn">
-              <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">python</span>
-            </button>
-          </a>
-
-          <a href="https://cottonwood-test.tistory.com/category/알고리즘">
-            <button type="button" class="btn_image" id="img_btn">
-              <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">알고리즘</span>
-            </button>
-          </a>
-
-          <a href="https://cottonwood-test.tistory.com/category/JavaScript">
-            <button type="button" class="btn_image" id="img_btn">
-              <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">JavaScript</span>
-            </button>
-          </a>
-
-          <a href="https://cottonwood-test.tistory.com/category/깃">
-            <button type="button" class="btn_image" id="img_btn">
-              <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">깃</span>
-            </button>
-          </a>
-
-          <a href="https://cottonwood-test.tistory.com/category/MySQL">
-            <button type="button" class="btn_image" id="img_btn">
-              <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">MySQL</span>
-            </button>
-          </a>
-
-          <a href="https://cottonwood-test.tistory.com/category/Service">
-            <button type="button" class="btn_image" id="img_btn">
-              <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">Service</span>
-            </button>
-          </a>
-
-  
 
         </div>
         <div id="leftThing" style="width: 5rem; height: 50rem; font:white;">
-          <button onclick="hideAndShow('#profileContent')" type="button" class="mobile-menu btn_image" id="img_btn"><img
-            src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-            style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-          <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">프로필</span></button>
 
-        
-        <button onclick="hideAndShow('#inFolder')" type="button" class="btn_image" id="img_btn"><img
-            src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-            style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-          <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">게시글</span></button>
 
-        <a href="https://github.com/Cottonwood-moa">
-          <button type="button" class="btn_image" id="img_btn"><img
-              src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-              style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-            <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">깃허브</span></button>
-        </a>
 
-        <a href="https://blog.naver.com/blog_geon">
-          <button type="button" class="btn_image" id="img_btn"><img
-              src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-              style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-            <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">NBLOG</span></button>
-        </a>
 
-        <a href="https://character-test.netlify.app/">
-          <button type="button" class="btn_image" id="img_btn"><img
-              src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-              style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-            <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">닮은캐릭터</span></button>
-        </a>
-
-        <a href="https://loverface.netlify.app/">
-          <button type="button" class="btn_image" id="img_btn"><img
-              src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
-              style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-            <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">궁합테스트</span></button>
-        </a>
-        
         </div>
 
         <!-- inFolder -->
-        <div id="inFolder"
-          style="overflow:auto; display: none; background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
-          <i class="fa fa-times fa-2x" style="cursor: pointer"onclick="hideAndShow('#inFolder')"></i>
-        </div>
- 
+        <!-- <div id="inFolder"
+          style=" display: none; background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
 
+          <div id="inFolderHeader" style="display: flex; text-align: right;">
+            <div style="width: 100%;">
+              <i class="hideSessionInFolder fa fa-times fa-2x" style="cursor: pointer;"></i>
+            </div>
+          </div>
+
+          <div id="inFolderContainer">
+            <div id="inFolderLeftThing">
+              <a href="https://cottonwood-test.tistory.com">
+                <button type="button" class="btn_image" id="img_btn">
+                  <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+                    style="width: 3rem; height: 3rem; ">
+                  <span style="color: black ; ">전체 글</span>
+                </button>
+              </a>
+
+              <a href="https://cottonwood-test.tistory.com/category/일상">
+                <button type="button" class="btn_image" id="img_btn"><img
+                    src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+                    style="width: 3rem; height: 3rem; ">
+                  <span style="color:black ; ">일상</span></button>
+              </a>
+
+              <a href="https://cottonwood-test.tistory.com/category/Node.js">
+                <button type="button" class="btn_image" id="img_btn">
+                  <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+                    style="width: 3rem; height: 3rem; ">
+                  <span style="color:black ; ">node.js</span>
+                </button>
+              </a>
+
+              <a href="https://cottonwood-test.tistory.com/category/HTML+CSS">
+                <button type="button" class="btn_image" id="img_btn">
+                  <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+                    style="width: 3rem; height: 3rem; ">
+                  <span style="color:black ; ">HTML+CSS</span>
+                </button>
+              </a>
+
+              <a href="https://cottonwood-test.tistory.com/category/python">
+                <button type="button" class="btn_image" id="img_btn">
+                  <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+                    style="width: 3rem; height: 3rem; ">
+                  <span style="color:black ; ">python</span>
+                </button>
+              </a>
+            </div>
+
+            <div id="inFolderRightThing">
+              <a href="https://cottonwood-test.tistory.com/category/알고리즘">
+                <button type="button" class="btn_image" id="img_btn">
+                  <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+                    style="width: 3rem; height: 3rem; ">
+                  <span style="color:black ; ">알고리즘</span>
+                </button>
+              </a>
+
+              <a href="https://cottonwood-test.tistory.com/category/JavaScript">
+                <button type="button" class="btn_image" id="img_btn">
+                  <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+                    style="width: 3rem; height: 3rem; ">
+                  <span style="color:black ; ">JavaScript</span>
+                </button>
+              </a>
+
+              <a href="https://cottonwood-test.tistory.com/category/깃">
+                <button type="button" class="btn_image" id="img_btn">
+                  <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+                    style="width: 3rem; height: 3rem; ">
+                  <span style="color:black ; ">깃</span>
+                </button>
+              </a>
+
+              <a href="https://cottonwood-test.tistory.com/category/MySQL">
+                <button type="button" class="btn_image" id="img_btn">
+                  <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+                    style="width: 3rem; height: 3rem; ">
+                  <span style="color:black ; ">MySQL</span>
+                </button>
+              </a>
+
+              <a href="https://cottonwood-test.tistory.com/category/Service">
+                <button type="button" class="btn_image" id="img_btn">
+                  <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/folder.png"
+                    style="width: 3rem; height: 3rem; ">
+                  <span style="color:black ; ">Service</span>
+                </button>
+              </a>
+            </div>
+          </div>
+
+        </div> -->
         <!-- profileContent -->
         <div id="profileContent"
-          style="overflow:auto; display: none; background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
-          <i class="fa fa-times fa-2x" style="cursor: pointer"onclick="hideAndShow('#profileContent')"></i>
+          style="overflow-y:auto; overflow-x:hidden; display: none; background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
+
+          <div id="profileHeader" style="display: flex; text-align: right;">
+            <div style="width: 100%;">
+              <i class="hideSessionProfile fa fa-times fa-2x" style="cursor: pointer"></i>
+            </div>
+          </div>
+
+
           <header>
 
             <div class="container">
@@ -631,8 +771,7 @@
 
                 <div class="profileCaelumiuvat-image">
 
-                  <img
-                    src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/KakaoTalk_20201203_010438164.jpg"
+                  <img src="https://tistory2.daumcdn.net/tistory/4707383/skin/images/KakaoTalk_20201203_010438164.jpg"
                     alt="">
 
                 </div>
@@ -660,13 +799,13 @@
 
                 <div class="profileCaelumiuvat-bio">
 
-                    안녕하세요! / Hi, there 👋<br>
-                    🌱 개발자가 되기 위해 공부중입니다.<br>
-                    Stranger's it doesn't matter where are
-                    you from, how old or young you are, how you look or whatever. You are beautiful, kind soul, golden
-                    heart. I♥️u all. Hope Your life be magical. Hope u nvr give up in life. Hope u try and try until u
-                    achieve your goals. I wish may the rest of your life be the best of your life. God bless you
-                    🙏😇📷✈️🏕️</p>
+                  안녕하세요! / Hi, there 👋<br>
+                  🌱 개발자가 되기 위해 공부중입니다.<br>
+                  Stranger's it doesn't matter where are
+                  you from, how old or young you are, how you look or whatever. You are beautiful, kind soul, golden
+                  heart. I♥️u all. Hope Your life be magical. Hope u nvr give up in life. Hope u try and try until u
+                  achieve your goals. I wish may the rest of your life be the best of your life. God bless you
+                  🙏😇📷✈️🏕️</p>
 
                 </div>
 
@@ -684,200 +823,97 @@
 
               <div class="gallery">
 
-               
-                  <a data-fancybox="gallery" href="https://tistory3.daumcdn.net/tistory/4707383/skin/images/profile.jpg">
-                  <img src="https://tistory3.daumcdn.net/tistory/4707383/skin/images/profile.jpg"
-                    class="gallery-image" alt="">
-                  </a>
-
-                  <div class="gallery-item-info">
-                    
-
-                  </div>
-
-                
-
-             
-                  <a data-fancybox="gallery" href="https://tistory4.daumcdn.net/tistory/4707383/skin/images/KakaoTalk_20210330_013958647.jpg">
-                  <img src="https://tistory4.daumcdn.net/tistory/4707383/skin/images/KakaoTalk_20210330_013958647.jpg"
-                    class="gallery-image" alt="">
-                  </a>
-                  <div class="gallery-item-info">
-
-
-
-                  </div>
-
-                
-
-                <div class="gallery-item" tabindex="0">
-
-                  <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop"
-                    class="gallery-image" alt="">
-
-                  <div class="gallery-item-type">
-
-                    <span class="visually-hidden">Gallery</span>
-
-                  </div>
-
-                  <div class="gallery-item-info">
-
-
-
-                  </div>
-
+                <a data-fancybox="gallery" href="https://tistory3.daumcdn.net/tistory/4707383/skin/images/profile.jpg">
+                  <img src="https://tistory3.daumcdn.net/tistory/4707383/skin/images/profile.jpg" class="gallery-image"
+                    alt="">
+                </a>
+                <div class="gallery-item-info">
                 </div>
 
-                <div class="gallery-item" tabindex="0">
-
-                  <img src="https://images.unsplash.com/photo-1502630859934-b3b41d18206c?w=500&h=500&fit=crop"
+                <a data-fancybox="gallery"
+                  href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_07.jpg">
+                  <img
+                    src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_07.jpg"
                     class="gallery-image" alt="">
-
-                  <div class="gallery-item-type">
-
-                    <span class="visually-hidden">Video</span>
-
-                  </div>
-
-                  <div class="gallery-item-info">
-
-
-
-                  </div>
-
+                </a>
+                <div class="gallery-item-info">
                 </div>
 
-                <div class="gallery-item" tabindex="0">
-
-                  <img src="https://images.unsplash.com/photo-1498471731312-b6d2b8280c61?w=500&h=500&fit=crop"
-                    class="gallery-image" alt="">
-
-                  <div class="gallery-item-type">
-
-                    <span class="visually-hidden">Gallery</span>
-
-                  </div>
-
-                  <div class="gallery-item-info">
-
-
-
-                  </div>
-
+                <a data-fancybox="gallery" href="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_05.jpg">
+                  <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_05.jpg" class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
                 </div>
 
-                <div class="gallery-item" tabindex="0">
-
-                  <img src="https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=500&h=500&fit=crop"
-                    class="gallery-image" alt="">
-
-                  <div class="gallery-item-info">
-
-
-
-                  </div>
-
+                <a data-fancybox="gallery" href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_02.jpg">
+                  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_02.jpg" class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
                 </div>
 
-                <div class="gallery-item" tabindex="0">
 
-                  <img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=500&h=500&fit=crop"
-                    class="gallery-image" alt="">
-
-                  <div class="gallery-item-type">
-
-                    <span class="visually-hidden">Gallery</span>
-
-                  </div>
-
-                  <div class="gallery-item-info">
-
-
-                  </div>
-
+                <a data-fancybox="gallery" href="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20201013_014135033.jpg">
+                  <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20201013_014135033.jpg" class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
                 </div>
 
-                <div class="gallery-item" tabindex="0">
 
-                  <img src="https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop"
-                    class="gallery-image" alt="">
-
-                  <div class="gallery-item-info">
-
-
-                  </div>
-
+                <a data-fancybox="gallery" href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_01.jpg">
+                  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_01.jpg" class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
                 </div>
 
-                <div class="gallery-item" tabindex="0">
 
-                  <img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?w=500&h=500&fit=crop"
-                    class="gallery-image" alt="">
-
-                  <div class="gallery-item-type">
-
-                    <span class="visually-hidden">Gallery</span>
-
-                  </div>
-
-                  <div class="gallery-item-info">
-
-
-
-                  </div>
-
+                <a data-fancybox="gallery" href="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_06.jpg">
+                  <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_06.jpg" class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
                 </div>
 
-                <div class="gallery-item" tabindex="0">
 
-                  <img src="https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?w=500&h=500&fit=crop"
-                    class="gallery-image" alt="">
-
-                  <div class="gallery-item-info">
-
-
-
-                  </div>
-
+                <a data-fancybox="gallery" href="https://tistory3.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_04.jpg">
+                  <img src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_04.jpg" class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
                 </div>
 
-                <div class="gallery-item" tabindex="0">
 
-                  <img src="https://images.unsplash.com/photo-1505058707965-09a4469a87e4?w=500&h=500&fit=crop"
-                    class="gallery-image" alt="">
-
-                  <div class="gallery-item-info">
-
-
-
-                  </div>
-
+                <a data-fancybox="gallery" href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_09.jpg">
+                  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_09.jpg" class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
                 </div>
 
-                <div class="gallery-item" tabindex="0">
 
-                  <img src="https://images.unsplash.com/photo-1423012373122-fff0a5d28cc9?w=500&h=500&fit=crop"
-                    class="gallery-image" alt="">
-
-                  <div class="gallery-item-type">
-
-                    <span class="visually-hidden">Video</span>
-
-                  </div>
-
-                  <div class="gallery-item-info">
-
-
-
-                  </div>
-
+                <a data-fancybox="gallery" href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_03.jpg">
+                  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_03.jpg" class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
                 </div>
+
+
+                <a data-fancybox="gallery" href="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293.jpg">
+                  <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293.jpg" class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
+                </div>
+
+
+                <a data-fancybox="gallery" href="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_08.jpg">
+                  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/KakaoTalk_20210502_205746293_08.jpg" class="gallery-image" alt="">
+                </a>
+                <div class="gallery-item-info">
+                </div>
+
+
+
 
               </div>
               <!-- End of gallery -->
 
-             
+
 
             </div>
             <!-- End of container -->
@@ -885,7 +921,7 @@
           </main>
 
         </div>
-       
+
       </div>
 
 
@@ -916,34 +952,9 @@
 
 
       <hr>
-    
+
       <hr>
-      <!-- <div id="footerAll">
-          <div class="cover-footer">
-            <s_if_var_footer-image>
-            
-            </s_if_var_footer-image>
-            <s_if_var_footer-text>
-              <p>[##_var_footer-text_##]</p>
-            </s_if_var_footer-text>
-            <div class="social-link">
-              <s_if_var_sns-pinterest><a href="[##_var_sns-pinterest_##]" class="pinterest"><span
-                    class="">Pinterest</span></a></s_if_var_sns-pinterest>
-              <s_if_var_sns-facebook><a href="[##_var_sns-facebook_##]" class="facebook">Facebook</a>
-              </s_if_var_sns-facebook>
-              <s_if_var_sns-twitter><a href="[##_var_sns-twitter_##]" class="twitter">Twitter</a>
-              </s_if_var_sns-twitter>
-              <s_if_var_sns-instagram><a href="[##_var_sns-instagram_##]" class="instagram">Instagram</a>
-              </s_if_var_sns-instagram>
-            </div>
-            <nav class="menu">
-              [##_blog_menu_##]
-            </nav>
-          </div>
-          [##_revenue_list_lower_##]
-          <footer id="footer">
-            <p class="copyright">DESIGN BY <a href="#">TISTORY</a> <a href="[##_owner_url_##]" class="admin">관리자</a></p>
-          </footer> -->
+
     </div>
     </div>
 
@@ -953,14 +964,87 @@
     <script src="./images/script.js"></script>
 
     <script>
+
       function hideAndShow(elementHideAndShow) {
         if ($(elementHideAndShow).css('display') == 'none') {
-          $(elementHideAndShow).show(1000);
+          $(elementHideAndShow).show(100);
         } else {
-          $(elementHideAndShow).hide(1000);
+          $(elementHideAndShow).hide(100);
         }
       }
     </script>
+    <!-- <script>
+      /* hideAndShow Storage */
+      $(document).ready(function ($) {
+
+
+        if (Modernizr.localstorage) {
+
+
+          $('#img_btn_storage').click(function (a) {
+            if ($('#inFolder').css('display') == 'none') {
+              localStorage.setItem('subscribed', true);
+              localStorage.clear();
+              $('#inFolder').show(100);
+            }
+            else {
+              localStorage.setItem('subscribed', true);
+              $('#inFolder').hide(100);
+            }
+          });
+
+          const is_subscribed = localStorage.getItem('subscribed');
+
+          if (is_subscribed) {
+            console.log('localStorage')
+            $('#inFolder').hide(100);
+          }
+
+          if (!is_subscribed) {
+            console.log('no localStorage');
+            $('#inFolder').show(100);
+          }
+
+        }
+
+      });
+    </script> -->
+
+
+    <!-- <script>
+      $(document).ready(function ($) {
+
+        if (Modernizr.localstorage) {
+
+
+          $('#img_btn_storage_profile').click(function (e) {
+            if ($('#profileContent').css('display') == 'none') {
+              localStorage.setItem('subscribed2', true);
+              localStorage.clear();
+              $('#profileContent').show(100);
+            }
+            else {
+              localStorage.setItem('subscribed2', true);
+              $('#profileContent').hide(100);
+            }
+          });
+
+          const is_subscribed = localStorage.getItem('subscribed2');
+
+          if (is_subscribed) {
+            console.log('localStorage')
+            $('#profileContent').hide(100);
+          }
+
+          if (!is_subscribed) {
+            console.log('no localStorage');
+            $('#profileContent').show(100);
+          }
+
+        }
+
+      });
+    </script> -->
 
     <script>
       $('#innerPost').click(function () {
@@ -982,6 +1066,82 @@
 
     </script>
 
+    <!-- <script>
+   function hideDiv() {
+      $(".hideSessionInFolder").click(function () {
+        $("#inFolder").stop().toggle("fast",function () {
+          sessionStorage.setItem("show-hide-inFolder", $("#inFolder").css("display"));
+          console.log(sessionStorage.getItem("show-hide-inFolder"))
+        });
+      });
+
+      if (sessionStorage.getItem("show-hide-inFolder")) {
+        $("#inFolder").css("display", sessionStorage.getItem("show-hide-inFolder"));
+      }
+    }
+    $(document).ready(function () {
+      hideDiv();
+    });
+</script> -->
+    <script>
+
+
+      function hideDiv2() {
+        $(".hideSessionProfile").click(function () {
+          $("#profileContent").stop().toggle("fast", function () {
+            sessionStorage.setItem("show-hide-profile", $("#profileContent").css("display"));
+            console.log(sessionStorage.getItem("show-hide-profile"))
+          });
+        });
+
+        if (sessionStorage.getItem("show-hide-profile")) {
+          $("#profileContent").css("display", sessionStorage.getItem("show-hide-profile"));
+        }
+      }
+      $(document).ready(function () {
+        hideDiv2();
+      });
+
+
+    </script>
+    <script>
+
+
+      function hideDiv3() {
+        $(".hideSessionMainContent").click(function () {
+          $("#mainContent").stop().toggle("fast", function () {
+            sessionStorage.setItem("show-hide-main", $("#mainContent").css("display"));
+            console.log(sessionStorage.getItem("show-hide-main"))
+          });
+        });
+
+        if (sessionStorage.getItem("show-hide-main")) {
+          $("#mainContent").css("display", sessionStorage.getItem("show-hide-main"));
+        }
+      }
+      $(document).ready(function () {
+        hideDiv3();
+      });
+
+
+    </script>
+
+    <script>
+      /* 사이드 바에 추가한 구독 링크를 클릭하면 본문 내의 숨겨져 있는 구독 버튼을 클릭하고 페이지 새로고침 */
+      $(".subs").click(function () {
+        $(".btn_menu_toolbar.btn_subscription").trigger("click");
+        setTimeout(function () { location.reload() }, 500);
+      });
+
+      /* 사이드 바의 구독 링크의 텍스트를 현재의 구독상태에 맞게 바꾸기 */
+      $(document).ready(function () {
+        if ($(".btn_tool .txt_state").text() == "구독중") {
+          $(".subs").text("구독중")
+        }
+      });
+    </script>
+
+    <script></script>
   </s_t3>
 
 
