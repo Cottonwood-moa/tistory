@@ -48,7 +48,7 @@
 
 
       <div id="mainContent"
-        style="overflow-y:auto; overflow-x:hidden;  background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
+        style="overflow-y:auto; overflow-x:hidden;   background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
 
 
 
@@ -58,9 +58,7 @@
             <a href="[##_blog_link_##]">[##_title_##]</a>
           </h1>
 
-          <!-- <div id="goBackButton"
-              style=" font-size: 2rem; text-align: left; margin-left: 5%; margin-top: 5%;"><button
-                onclick="goBack()"><i class="fas fa-arrow-left"></i></button></div> -->
+         
 
           <div id="hideButton" style="font-size: 1rem; text-align: right; margin-right: 1%; width: 100%;">
             <button onclick="goBack()"><i class="fas fa-arrow-left fa-2x"></i></button>
@@ -1063,8 +1061,9 @@
       /* 사이드 바에 추가한 구독 링크를 클릭하면 본문 내의 숨겨져 있는 구독 버튼을 클릭하고 페이지 새로고침 */
       $(".subs").click(function () {
         $(".btn_menu_toolbar.btn_subscription").trigger("click");
-        location.reload()
+        setTimeout(function() { location.reload()}, 500);
       });
+
 
       /* 사이드 바의 구독 링크의 텍스트를 현재의 구독상태에 맞게 바꾸기 */
       $(document).ready(function () {
@@ -1076,7 +1075,79 @@
 
     </script>
 
-    <script></script>
+<script>
+  $(function () {
+      const note = $("#mainContent");
+      updatePosition(note);
+
+      note.draggable({ stop: function () {
+
+          let left = this.offsetLeft;
+          let top = this.offsetTop;
+
+          sessionStorage.setItem("left", left);
+          sessionStorage.setItem("top", top);
+      }
+      });
+
+      window.addEventListener("storage", function (e) {
+          updatePosition(note);
+      }, 
+      false);
+  });
+
+      function updatePosition(note) {
+
+      let left = sessionStorage.getItem("left");
+      let top = sessionStorage.getItem("top");
+      note.css({ left: left + "px", top: top + "px" });
+        
+      note[0].offsetTop = top;
+      note[0].offsetLeft = left
+      }
+      $(function () {
+
+
+let profileNote = $("#profileContent");
+ updatePositionProfile(profileNote);
+
+ profileNote.draggable({
+   stop: function () {
+
+    let profileLeft = this.offsetLeft;
+    let profileTop = this.offsetTop;
+
+     sessionStorage.setItem("profileLeft", profileLeft);
+     sessionStorage.setItem("profileTop", profileTop);
+   }
+ });
+
+ window.addEventListener("profileStorage", function () {
+   updatePositionProfile(profileNote);
+ },
+
+   false); 
+
+
+});
+
+function updatePositionProfile(profileNote) {
+
+let profileLeft = sessionStorage.getItem("profileLeft");
+let profileTop= sessionStorage.getItem("profileTop");
+ profileNote.css({ left: profileLeft + "px", top: profileTop + "px" });
+
+ profileNote[0].offsetTop = profileTop;
+ profileNote[0].offsetLeft = profileLeft;
+
+
+}
+
+      $( "#profileContent" ).draggable({ scroll: false });
+</script>
+
+
+
   </s_t3>
 
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fc7851441748898"></script>

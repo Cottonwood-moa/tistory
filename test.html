@@ -1,74 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script
-  src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"
-  integrity="sha256-PsB+5ZEsBlDx9Fi/GXc1bZmC7wEQzZK4bM/VwNm1L6c="
-  crossorigin="anonymous"></script>
+  <title>Untitled Page</title>
 
-  <style>
-  body {
-background: #786ff0;
-}
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <style type="text/css">
+    .sex {
+      position: absolute;
+      width: 200px;
+      height: 220px;
+      background: #2E2E2E;
+      top: 50px;
+      left: 50px;
 
-.title { 
-  font: 3em Arial;
-  color:#fff;
-}
+    }
+    .note {
+      position: absolute;
+      width: 200px;
+      height: 220px;
+      background: #f50000;
+      top: 150px;
+      left: 50px;
 
-.ripple {
-   width: 10px;
-   height: 10px;
-   background-color: transparent;
-   position: fixed;
-   border-radius: 50%;
-   border: 1px solid #ffffff59;
-}
-
-@keyframes ripple-effect {
-   to {
-      transform:scale(15);
-      opacity: 0.01;
-   }
-}
+    }
   </style>
-</head>
-<body>
- 
+
+  <script>
+    $(function () {
+
+
+     let sex = $(".sex");
+      updatePositionSex(sex);
+
+      sex.draggable({
+        stop: function () {
+
+         let sexleft = this.offsetLeft;
+         let sextop = this.offsetTop;
+
+          sessionStorage.setItem("sexleft", sexleft);
+          sessionStorage.setItem("sextop", sextop);
+        }
+      });
+
+      window.addEventListener("sexstorage", function () {
+        updatePositionSex(sex);
+      },
+
+        false); 
+
+
+    });
+
+    function updatePositionSex(sex) {
+
+     let sexleft = sessionStorage.getItem("sexleft");
+     let sextop= sessionStorage.getItem("sextop");
+      sex.css({ left: sexleft + "px", top: sextop + "px" });
+
+      sex[0].offsetTop = sextop;
+      sex[0].offsetLeft = sexleft;
+
+
+    }
+  </script>
+
+
+
+
+
+
+
+
+
 
 <script>
-  
-document.onclick = () => applyCursorRippleEffect(event);
+  $(function () {
+     let note = $(".note");
+      updatePositionNote(note);
 
-function applyCursorRippleEffect(e) {
-   const ripple = document.createElement("div");
-  
-   ripple.className = "ripple";
-   document.body.appendChild(ripple);
+      note.draggable({ stop: function () {
+        console.log(this);
+        let noteleft = this.offsetLeft;
+        let notetop = this.offsetTop;
 
-  ripple.style.left = `${e.clientX}px`;
-  ripple.style.top = `${e.clientY}px`; 
-   ripple.style.animation = `ripple-effect .4s  linear`;
-   ripple.onanimationend = () => {
-     document.body.removeChild(ripple);
-     
-   }
-  
-}
+          sessionStorage.setItem("noteleft", noteleft);
+          sessionStorage.setItem("notetop", notetop);
+      }
+      });
 
-// extra and optional part:
+      window.addEventListener("storage", function () {
+          updatePositionNote(note);
+      }, 
+      false);
+  });
 
-const all = document.body.getElementsByTagName("*");
-for (var i = 0;  i < all.length; ++i) {
-  all[i].onclick = (event) => event.stopPropagation();
-}
+      function updatePositionNote(note) {
 
-// If you remove this part you will realise  the ripple overlap. If you select the h1 element in the body the ripple is triggered. Perhaps you don't want that behaviour (the event bubbling down to body children), and so you may add this code. ITS DANGEROUS: for this occasion you may want, but there is specific cases wherein you don't want it at all. Its annoying, just like the discussion o Dev.to pointed out. This pen is simple, so it hasn't such problems. Links, buttons, css hovers, still work, but the ripple don't, that is, it will trigger only where you specifiy: body. As I said, there are possibily occasions you will have to specifiy which kind of elements won't receive this behaviour. This part is general, all elements in body don't receive propagation from its father.
+    let noteleft = sessionStorage.getItem("noteleft");
+    let notetop = sessionStorage.getItem("notetop");
+      note.css({ left:noteleft + "px", top: notetop + "px" });
+        
+      note[0].offsetTop = notetop;
+      note[0].offsetLeft = noteleft
+      }
 
 </script>
+
+
+</head>
+
+<body>
+
+  <div class="sex"></div>
+  <div class="note"></div>
+
 </body>
+
 </html>
