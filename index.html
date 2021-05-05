@@ -44,9 +44,11 @@
     </div>
 
     <div id="wrap"
-      style="background-image: url('https://tistory2.daumcdn.net/tistory/4706624/skin/images/wallpaperbetterDong.png');">
+      style="background-image: url('https://tistory2.daumcdn.net/tistory/4706624/skin/images/wallpapercat.png');">
       <div id="cloud-intro">
 
+
+  <img src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/none.png" class="moa">
 
         <div id="mainContent"
           style="overflow-y:auto; overflow-x:hidden; height: 80%;  background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
@@ -55,9 +57,9 @@
 
           <div id="contentHeader">
             <h1 id="mainContentTitle" style="display: flex; align-items: center;">
-
               <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/2.png">
               <div style="width: 150px; align-items: flex-end;"><a href="[##_blog_link_##]">[##_title_##]</a></div>
+              <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/snowshoe-cat.png" class="cat" style="width: 32px; bottom: -18px;left: 130px;position: relative; cursor: pointer;">
 
               <div id="hideButton" style="font-size: 1rem; text-align: right; margin-right: 1%; width: 83%;">
                 <button onclick="goBack()"><i class="fas fa-arrow-left fa-2x"></i></button>
@@ -576,51 +578,51 @@
 
         <div id="container">
           <!-- folder  -->
-          <div id="leftThing" style="width: 5rem; height: 50rem; font:white;">
+          <div id="leftThing">
             <button type="button" class="hideSessionProfile mobile-menu btn_image" id="img_btn"><img
                 src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/profile.png"
-                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">프로필</span></button>
+                class="folderImg">
+              <span class="folderList">프로필</span></button>
 
 
             <button type="button" class="hideSessionMainContent mobile-menu btn_image" id="img_btn"><img
                 src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/2.png"
-                style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-              <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">게시글</span></button>
+                class="folderImg">
+              <span class="folderList" >게시글</span></button>
 
             <a href="https://github.com/Cottonwood-moa">
               <button type="button" class="btn_image" id="img_btn"><img
                   src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/github.png"
-                  style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-                <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">깃허브</span></button>
+                  class="folderImg">
+                <span class="folderList" >깃허브</span></button>
             </a>
 
             <a href="https://blog.naver.com/blog_geon">
               <button type="button" class="btn_image" id="img_btn"><img
                   src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/naver.png"
-                  style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-                <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">NBLOG</span></button>
+                  class="folderImg">
+                <span class="folderList" >NBLOG</span></button>
             </a>
 
             <a href="https://character-test.netlify.app/">
               <button type="button" class="btn_image" id="img_btn"><img
                   src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/modal.png"
-                  style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-                <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">닮은캐릭터</span></button>
+                  class="folderImg">
+                <span class="folderList" >닮은캐릭터</span></button>
             </a>
 
             <a href="https://loverface.netlify.app/">
               <button type="button" class="btn_image" id="img_btn"><img
                   src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/face.png"
-                  style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-                <span style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">궁합테스트</span></button>
+                  class="folderImg">
+                <span class="folderList" >궁합테스트</span></button>
             </a>
 
             <button type="button" class="btn_image" id="img_btn">
               <div class="subs" style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">
                 <img id="subsImg" src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/subscribe.png"
-                  style="width: 3rem; height: 3rem;padding: 1rem; padding-bottom: 0.3rem;">
-                <span id="subsText">
+                  class="folderImg">
+                <span class="folderList">
                   Subscribe</span>
               </div>
             </button>
@@ -636,10 +638,15 @@
           <div id="profileContent"
             style="overflow-y:auto; overflow-x:hidden; display: none; background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
 
-            <div id="profileHeader" style="display: flex; text-align: right;">
+            <div id="profileHeader" style="display: flex; text-align: right; border-bottom:solid 2px black; align-items: center;">
+              <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/2.png" style="position: relative; bottom: -2px;">
+              <h1 class="profileHeaderTitle" style="width: 120px;">profile</h1>
+              <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/snowshoe-cat.png" class="cat" style="width: 32px; bottom: -19px;left: 130px;position: relative; cursor: pointer;">
               <div style="width: 100%;">
+               
                 <i class="hideSessionProfile fa fa-times fa-2x" style="cursor: pointer"></i>
               </div>
+            
             </div>
 
 
@@ -685,8 +692,9 @@
                     Stranger's it doesn't matter where are
                     you from, how old or young you are, how you look or whatever. You are beautiful, kind soul, golden
                     heart. I♥️u all. Hope Your life be magical. Hope u nvr give up in life. Hope u try and try until u
-                    achieve your goals. I wish may the rest of your life be the best of your life. God bless you
-                    🙏
+                    achieve your goals. I wish may the rest of your life be the best of your life. God bless you🙏 <br>
+                    I will let you know the secret only to you who read this article. <br>
+                    Turn on the sound and touch the cat.
 
 
 
@@ -1027,7 +1035,11 @@
       $("#profileContent").draggable({ scroll: false });
     </script>
 
+<script>
+  $('.cat').click( () => new Audio('https://tistory1.daumcdn.net/tistory/4706624/skin/images/meow.mp3').play() );
+  $('.moa').click( () => new Audio('https://tistory1.daumcdn.net/tistory/4706624/skin/images/meow.mp3').play() );
 
+</script>
 
   </s_t3>
 
