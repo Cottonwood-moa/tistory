@@ -1,122 +1,84 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head>
-  <title>Untitled Page</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="mouse.parallax.js"></script>
+  <style>
+    #background {
 
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-  <style type="text/css">
-    .sex {
-      position: absolute;
-      width: 200px;
-      height: 220px;
-      background: #2E2E2E;
-      top: 50px;
-      left: 50px;
+      background-image: url('1.png');
 
     }
-    .note {
-      position: absolute;
-      width: 200px;
-      height: 220px;
-      background: #f50000;
-      top: 150px;
-      left: 50px;
+
+    #foreground {
+
+      background-image: url('2.png');
+
+    }
+
+    #fore-foreground {
+
+      background-image: url('3.png');
+
+    }
+
+    #fore-fore-foreground {
+
+      background-image: url('4.png');
+
+    }
+
+    .mouse-bg {
+
+      left: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      top: 0;
+
+      position: fixed;
+
+      z-index: -1;
 
     }
   </style>
-
-  <script>
-    $(function () {
-
-
-     let sex = $(".sex");
-      updatePositionSex(sex);
-
-      sex.draggable({
-        stop: function () {
-
-         let sexleft = this.offsetLeft;
-         let sextop = this.offsetTop;
-
-          sessionStorage.setItem("sexleft", sexleft);
-          sessionStorage.setItem("sextop", sextop);
-        }
-      });
-
-      window.addEventListener("sexstorage", function () {
-        updatePositionSex(sex);
-      },
-
-        false); 
-
-
-    });
-
-    function updatePositionSex(sex) {
-
-     let sexleft = sessionStorage.getItem("sexleft");
-     let sextop= sessionStorage.getItem("sextop");
-      sex.css({ left: sexleft + "px", top: sextop + "px" });
-
-      sex[0].offsetTop = sextop;
-      sex[0].offsetLeft = sexleft;
-
-
-    }
-  </script>
-
-
-
-
-
-
-
-
-
-
-<script>
-  $(function () {
-     let note = $(".note");
-      updatePositionNote(note);
-
-      note.draggable({ stop: function () {
-        console.log(this);
-        let noteleft = this.offsetLeft;
-        let notetop = this.offsetTop;
-
-          sessionStorage.setItem("noteleft", noteleft);
-          sessionStorage.setItem("notetop", notetop);
-      }
-      });
-
-      window.addEventListener("storage", function () {
-          updatePositionNote(note);
-      }, 
-      false);
-  });
-
-      function updatePositionNote(note) {
-
-    let noteleft = sessionStorage.getItem("noteleft");
-    let notetop = sessionStorage.getItem("notetop");
-      note.css({ left:noteleft + "px", top: notetop + "px" });
-        
-      note[0].offsetTop = notetop;
-      note[0].offsetLeft = noteleft
-      }
-
-</script>
-
-
+  <title>Document</title>
 </head>
 
 <body>
+  <div id="background" class="mouse-bg"></div>
 
-  <div class="sex"></div>
-  <div class="note"></div>
+  <div id="foreground" class="mouse-bg"></div>
 
+  <div id="fore-foreground" class="mouse-bg"></div>
+
+  <div id="fore-fore-foreground" class="mouse-bg"></div>
+
+
+  <script>
+    $(document).ready(function () {
+
+      $('#background').mouseParallax({ moveFactor: 5 });
+
+      $('#foreground').mouseParallax({ moveFactor: 10 });
+
+      $('#fore-foreground').mouseParallax({ moveFactor: 15 });
+
+      $('#fore-fore-foreground').mouseParallax({ moveFactor: 20 });
+
+
+
+      $('body').height(3000);
+
+    });
+
+  </script>
 </body>
 
 </html>

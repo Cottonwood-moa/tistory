@@ -474,6 +474,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 #contentHeader{
 	width: 100%;
 	display: flex;
+	flex-wrap: wrap
 }
 
 #wrap{

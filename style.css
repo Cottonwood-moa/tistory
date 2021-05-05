@@ -24,41 +24,563 @@
 @import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
 @import url('//fonts.googleapis.com/css?family=Nanum+Myeongjo');
 
+/* profile */
+	/*
+
+All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 310). 
+        
+The 'supports' rule will only run if your browser supports CSS grid.
+
+Flexbox and floats are used as a fallback so that browsers which don't support grid will still recieve a similar layout.
+
+*/
+
+#cloud-intro{
+	position: relative;
+	width: 100%;
+	height: 550px;
+	background: url(https://static.radulescu.me/examples/clouds/clouds1000.png);
+	background: url(https://static.radulescu.me/examples/clouds/clouds1000.png) 0 200px,
+				url(https://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px,
+				url(https://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px 250px;
+	  animation: wind 20s linear infinite;
+  }
+  @keyframes wind{
+	0% {
+	  background-position: 0 200px, 0 300px, 100px 250px;
+	}
+	100% {
+	  background-position: 1000px 200px, 1200px 300px, 1100px 250px;
+	}
+  
+  }
+/* Base Styles */
+span.subs { cursor:pointer }
+.toolbar_rc { display:none } /* 오른쪽 가운데 */
+.toolbar_rb { display:none } /* 오른쪽 하단 */
+.toolbar_lb { display:none } /* 왼쪽 하단 */
+
+/* #inFolderContainer{
+	display: flex;
+	width:100%;
+	height: 100%;
+} */
+a:link {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+  }
+  a:visited {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+  }
+  a:hover {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+  }
+  a:active {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+  }
+
+#mainContentTitle{
+	font-family: 'Gamja Flower', cursive;
+	
+	
+}
+.post-type-thumbnail .post-item .thum {
+	border-radius: 2rem;
+    background-color: #ffffff;
+}
+  #profileContent::-webkit-scrollbar {
+    width: 12px;
+  }
+  #profileContent::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 8px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  #profileContent::-webkit-scrollbar-track {
+	height: 80%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+  }
+  #mainContent::-webkit-scrollbar {
+    width: 12px;
+  }
+  #mainContent::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 8px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  #mainContent::-webkit-scrollbar-track {
+	height: 80%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+  }
+
+
+.containerCaelumiuvat
+ {
+    max-width: 93.5rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.btnCaelumiuvat {
+    display: inline-block;
+    font: inherit;
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btnCaelumiuvat:focus {
+    outline: 0.5rem auto #4d90fe;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* ProfileCaelumiuvat Section */
+
+.profileCaelumiuvat {
+    padding: 5rem 0;
+}
+
+.profileCaelumiuvat::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.profileCaelumiuvat-image {
+    float: left;
+    width: calc(33.333% - 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.profileCaelumiuvat-image img {
+    border-radius: 50%;
+}
+
+.profileCaelumiuvat-user-settings,
+.profileCaelumiuvat-stats,
+.profileCaelumiuvat-bio {
+    float: left;
+    width: calc(66.666% - 2rem);
+}
+
+.profileCaelumiuvat-user-settings {
+    margin-top: 1.1rem;
+}
+
+.profileCaelumiuvat-user-name {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+
+
+
+.profileCaelumiuvat-settings-btnCaelumiuvat {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.profileCaelumiuvat-stats {
+    margin-top: 2.3rem;
+}
+
+.profileCaelumiuvat-stats li {
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-right: 4rem;
+	margin-top: 1rem;
+	margin-bottom:1rem ;
+}
+
+.profileCaelumiuvat-stats li:last-of-type {
+    margin-right: 0;
+}
+
+.profileCaelumiuvat-bio {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 2.3rem;
+}
+
+.profileCaelumiuvat-real-name,
+.profileCaelumiuvat-stat-count,
+.profileCaelumiuvat-edit-btnCaelumiuvat {
+    font-weight: 600;
+}
+
+/* Gallery Section */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem -1rem;
+    padding-bottom: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    flex: 1 0 22rem;
+    margin: 1rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.gallery-item:hover .gallery-item-info,
+.gallery-item:focus .gallery-item-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 2rem;
+}
+
+.gallery-item-info {
+    display: none;
+}
+
+.gallery-item-info li {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.gallery-item-likes {
+    margin-right: 2.2rem;
+}
+
+.gallery-item-type {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.fa-clone,
+.fa-comment {
+    transform: rotateY(180deg);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	border-radius: 2rem;
+}
+
+/* Loader */
+
+.loader {
+    width: 5rem;
+    height: 5rem;
+    border: 0.6rem solid #999;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: loader 500ms linear infinite;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 40rem) {
+    .profileCaelumiuvat {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4rem 0;
+    }
+
+    .profileCaelumiuvat::after {
+        display: none;
+    }
+
+    .profileCaelumiuvat-image,
+    .profileCaelumiuvat-user-settings,
+    .profileCaelumiuvat-bio,
+    .profileCaelumiuvat-stats {
+        float: none;
+        width: auto;
+    }
+
+    .profileCaelumiuvat-image img {
+        width: 7.7rem;
+    }
+
+    .profileCaelumiuvat-user-settings {
+        flex-basis: calc(100% - 10.7rem);
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+    .profileCaelumiuvat-user-name {
+        font-size: 1.2rem;
+    }
+
+    .profileCaelumiuvat-edit-btnCaelumiuvat {
+        order: 1;
+        padding: 0;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .profileCaelumiuvat-edit-btnCaelumiuvat {
+        margin-left: 0;
+    }
+
+    .profileCaelumiuvat-bio {
+        font-size: 0.4rem;
+        margin-top: 1.5rem;
+    }
+
+    .profileCaelumiuvat-edit-btnCaelumiuvat,
+    .profileCaelumiuvat-bio,
+    .profileCaelumiuvat-stats {
+        flex-basis: 100%;
+    }
+
+    .profileCaelumiuvat-stats {
+        order: 1;
+        margin-top: 1.5rem;
+    }
+
+    .profileCaelumiuvat-stats ul {
+        display: flex;
+        text-align: center;
+        padding: 1.2rem 0;
+        border-top: 0.1rem solid #dadada;
+        border-bottom: 0.1rem solid #dadada;
+    }
+
+    .profileCaelumiuvat-stats li {
+        font-size: 0.4rem;
+        flex: 1;
+        margin: 0;
+    }
+
+    .profileCaelumiuvat-stat-count {
+        display: block;
+    }
+}
+
+/* Spinner Animation */
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+
+The following code will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox & floated styling. 
+
+*/
+
+@supports (display: grid) {
+    .profileCaelumiuvat {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(3, auto);
+        grid-column-gap: 3rem;
+        align-items: center;
+    }
+
+    .profileCaelumiuvat-image {
+        grid-row: 1 / -1;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        grid-gap: 2rem;
+    }
+
+    .profileCaelumiuvat-image,
+    .profileCaelumiuvat-user-settings,
+    .profileCaelumiuvat-stats,
+    .profileCaelumiuvat-bio,
+    .gallery-item,
+    .gallery {
+        width: auto;
+        margin: 0;
+    }
+
+    @media (max-width: 40rem) {
+        .profileCaelumiuvat {
+            grid-template-columns: auto 1fr;
+            grid-row-gap: 1.5rem;
+        }
+
+        .profileCaelumiuvat-image {
+            grid-row: 1 / 2;
+        }
+
+        .profileCaelumiuvat-user-settings {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 1rem;
+        }
+
+        .profileCaelumiuvat-edit-btnCaelumiuvat,
+        .profileCaelumiuvat-stats,
+        .profileCaelumiuvat-bio {
+            grid-column: 1 / -1;
+        }
+
+        .profileCaelumiuvat-user-settings,
+        .profileCaelumiuvat-edit-btnCaelumiuvat,
+        .profileCaelumiuvat-settings-btnCaelumiuvat,
+        .profileCaelumiuvat-bio,
+        .profileCaelumiuvat-stats {
+            margin: 0;
+        }
+    }
+}
+
+
 /* Type Selector Reset */
 
 
+#wrap{
+	height: 100vh;
+	background-repeat : no-repeat;
+	background-size : cover;
+  
+}
 
+#img_btn{
+	padding: 0.7rem; 
+	border: none; 
+	background: none; 
+	cursor: pointer;
+
+}
+#img_btn_storage{
+	padding: 0; 
+	border: none; 
+	background: none; 
+	cursor: pointer;
+
+}
+#img_btn_storage_profile{
+	padding: 0; 
+	border: none; 
+	background: none; 
+	cursor: pointer;
+
+}
 #container {
-  height: 100%;
+  height: 80%;
   width: 100%;
   display: flex;
 }
 #leftThing {
   width: 25%;
+  height:80%;
 }
-#wrap {
-  width: 50%;
-	padding-left:20%;
-	padding-top:5%;
-}
-#rightThing {
-  width: 20%;
 
+#profileContent{
+	position: absolute;
+	width: 50%;
+	height: 150%;
+	margin:0.5%;
+	padding:1%;
+	border-radius:2rem;
+	font-family: 'Gamja Flower', cursive;
+	
 }
- #inFolder{
-	background-color: white;
-	width: 45%;
-  height: 75%;
-	border-radius: 2rem;
-	margin-left: 20%;
-	margin-top: 5%;
+
+
+  #inFolderContainer {
+	height:100%;
+	width: 100%;
+	padding-left: 5%;
+	display: flex;
   }
+  #inFolderLeftThing {
+	width: 160px;
+	height:100%;
+  }
+  
+  #inFolderRightThing{
+	  width: 160px;
+	  height:100%;
+  }
+ 
+  
 
 
+#footerAll{
+	height: 10%;
+}
+#mainContent{
+	min-width: 500px;
+	min-height: 400px;
+	width:50%;
+	height:80%;
+	position: fixed;
+	left: 40%;
+	top: 5%;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	overflow-wrap: break-word;
+	border-radius: 2rem;
+	margin:0.5%;
+	padding:1%;
+}
+
+
+/* 
+#wrap {
+	height: fit-content;
+	margin:0.5%;
+	padding:1%;
+	border-radius:2rem;
+} */
+#mainMenuTitle{
+	display: flex;
+	align-items: center;
+}
 .btn_image:hover {
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   }
+
 body {
+	overflow: hidden;
 	font-weight: 400;
 	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 1em;
@@ -67,10 +589,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-	height: 100vh;
-	background-repeat : no-repeat;
-	background-size : cover;
-  }
+
 
 html, body {
 	width: 100%;
@@ -178,7 +697,7 @@ hr {
 	outline: none;
 }
 #header .mobile-menu span {
-	position: absolute;
+	position: relative;
 	top: 50%;
 	left: 50%;
 	width: 26px;
@@ -372,11 +891,7 @@ hr {
 	visibility: hidden;
 }
 
-#footer {
-	position: relative;
-	padding: 29px 0;
-	border-top: 1px solid #ebebeb;
-}
+
 #footer p {
 	text-align: center;
 	font-size: 0.75em;
@@ -2186,3 +2701,35 @@ hr {
 	max-width: 860px;
 	margin: 30px auto
 }
+
+
+.menu_toolbar .btn_menu_toolbar {
+	display: none;
+}
+
+.menu_toolbar .btn_subscription {
+    display: none;
+
+}
+
+
+#menuEle{
+	
+	border-top: solid;
+}
+
+.entry-content pre{
+		background-color:black;
+		color:ghostwhite;
+    text-align: left;
+	
+}
+
+#footer{
+	top: 43%;
+    color: ghostwhite;
+	font-weight: bold;
+	font-family: 'Gamja Flower', cursive;
+	position: relative;
+}
+
