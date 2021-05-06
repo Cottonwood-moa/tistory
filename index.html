@@ -59,7 +59,7 @@
             <h1 id="mainContentTitle" style="display: flex; align-items: center;">
               <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/2.png">
               <div style="width: 150px; align-items: flex-end;"><a href="[##_blog_link_##]">[##_title_##]</a></div>
-              <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/snowshoe-cat.png" class="cat" style="width: 32px; bottom: -18px;left: 130px;position: relative; cursor: pointer;">
+              <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/snowshoe-cat.png" class="cat" style="width: 32px; bottom: -18px;left: 100px;position: relative; cursor: pointer;">
 
               <div id="hideButton" style="font-size: 1rem; text-align: right; margin-right: 1%; width: 83%;">
                 <button onclick="goBack()"><i class="fas fa-arrow-left fa-2x"></i></button>
@@ -641,7 +641,7 @@
             <div id="profileHeader" style="display: flex; text-align: right; border-bottom:solid 2px black; align-items: center;">
               <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/2.png" style="position: relative; bottom: -2px;">
               <h1 class="profileHeaderTitle" style="width: 120px;">profile</h1>
-              <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/snowshoe-cat.png" class="cat" style="width: 32px; bottom: -19px;left: 130px;position: relative; cursor: pointer;">
+              <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/snowshoe-cat.png" class="cat" style="width: 32px; bottom: -19px;left: 100px;position: relative; cursor: pointer;">
               <div style="width: 100%;">
                
                 <i class="hideSessionProfile fa fa-times fa-2x" style="cursor: pointer"></i>
@@ -693,8 +693,7 @@
                     you from, how old or young you are, how you look or whatever. You are beautiful, kind soul, golden
                     heart. I♥️u all. Hope Your life be magical. Hope u nvr give up in life. Hope u try and try until u
                     achieve your goals. I wish may the rest of your life be the best of your life. God bless you🙏 <br>
-                    I will let you know the secret only to you who read this article. <br>
-                    Turn on the sound and touch the cat.
+                    (This is a secret for you) Turn on the sound and touch the cat.
 
 
 
@@ -962,68 +961,63 @@
     <script>
       $(function () {
         const note = $("#mainContent");
-        updatePosition(note);
 
-        note.draggable(
-          { cancel: '.inner' },
-          {
-            stop: function () {
+        note.draggable({cancel: '.inner', scroll: false},{ stop: function () {
 
-              let left = this.offsetLeft;
-              let top = this.offsetTop;
+              const left = this.offsetLeft;
+              const top = this.offsetTop;
 
               sessionStorage.setItem("left", left);
               sessionStorage.setItem("top", top);
             }
           });
-
-        window.addEventListener("storage", function (e) {
           updatePosition(note);
-        },
-          false);
+
+        // window.addEventListener("storage", function () {
+        //   updatePosition(note);
+        // },
+        // false);
       });
 
       function updatePosition(note) {
 
-        let left = sessionStorage.getItem("left");
-        let top = sessionStorage.getItem("top");
+        const left = sessionStorage.getItem("left");
+        const top = sessionStorage.getItem("top");
         note.css({ left: left + "px", top: top + "px" });
 
         note[0].offsetTop = top;
         note[0].offsetLeft = left
       }
+
+
       $(function () {
 
+        const profileNote = $("#profileContent");
+       
 
-        let profileNote = $("#profileContent");
-        updatePositionProfile(profileNote);
+        profileNote.draggable({scroll: false},{ stop: function () {
 
-        profileNote.draggable(
-
-          {
-            stop: function () {
-
-              let profileLeft = this.offsetLeft;
-              let profileTop = this.offsetTop;
+              const profileLeft = this.offsetLeft;
+              const profileTop = this.offsetTop;
 
               sessionStorage.setItem("profileLeft", profileLeft);
               sessionStorage.setItem("profileTop", profileTop);
             }
           });
-
-        window.addEventListener("profileStorage", function () {
           updatePositionProfile(profileNote);
-        },
+        // window.addEventListener("storage", function () {
+        //   updatePositionProfile(profileNote);
+        // },
 
-          false);
+        //   false);
 
 
       });
 
       function updatePositionProfile(profileNote) {
 
-        let profileLeft = sessionStorage.getItem("profileLeft");
-        let profileTop = sessionStorage.getItem("profileTop");
+        const profileLeft = sessionStorage.getItem("profileLeft");
+        const profileTop = sessionStorage.getItem("profileTop");
         profileNote.css({ left: profileLeft + "px", top: profileTop + "px" });
 
         profileNote[0].offsetTop = profileTop;
@@ -1032,7 +1026,7 @@
 
       }
 
-      $("#profileContent").draggable({ scroll: false });
+      
     </script>
 
 <script>

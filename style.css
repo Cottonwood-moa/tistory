@@ -478,7 +478,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 	height: 100vh;
 	background-repeat : no-repeat;
 	background-size : cover;
-  
+	min-height: 900px;
 }
 
 #img_btn{
@@ -518,14 +518,15 @@ height: auto;
 
 #profileContent{
 	min-width: 550px;
-	position: absolute;
+	position: fixed;
 	width: 50%;
-	height: 150%;
+	height: 85%;
 	margin:0.5%;
 	padding:1%;
 	border-radius:2rem;
 	font-family: 'Gamja Flower', cursive;
-	
+	top: 5%;
+	z-index: 2;
 }
 
 
@@ -566,6 +567,7 @@ height: auto;
 	border-radius: 2rem;
 	margin:0.5%;
 	padding:1%;
+	z-index: 1;
 }
 
 
@@ -2731,7 +2733,7 @@ hr {
 }
 
 #footer{
-	top: 43%;
+	top: 37%;
     color: ghostwhite;
 	font-weight: bold;
 	font-family: 'Gamja Flower', cursive;

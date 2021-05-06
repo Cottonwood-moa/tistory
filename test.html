@@ -1,84 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="mouse.parallax.js"></script>
-  <style>
-    #background {
-
-      background-image: url('1.png');
-
-    }
-
-    #foreground {
-
-      background-image: url('2.png');
-
-    }
-
-    #fore-foreground {
-
-      background-image: url('3.png');
-
-    }
-
-    #fore-fore-foreground {
-
-      background-image: url('4.png');
-
-    }
-
-    .mouse-bg {
-
-      left: 0;
-
-      right: 0;
-
-      bottom: 0;
-
-      top: 0;
-
-      position: fixed;
-
-      z-index: -1;
-
-    }
-  </style>
   <title>Document</title>
+  <style>
+    .codeBlock {
+    width: 200px;
+    height: 300px;
+    border:solid black; 
+    resize: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #35465d;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    display: block;
+}
+  </style> 
 </head>
-
 <body>
-  <div id="background" class="mouse-bg"></div>
+ 
+<div style="display: flex;">
+<textarea class="codeBlock" style="border-right: none;background-image: url('html.png');"><span id="span">반갑습니다.</span></textarea>
+<textarea class="codeBlock" style="background-image: url('css.png');">span { color: green; }</textarea>
+<textarea class="codeBlock" style="border-left: none; background-image: url('javascript.png');">javascript</textarea>
+</div>
+<iframe sandbox="allow-scripts" style="width: 600px;height: 300px;">span.onclick = () => span.style.color = 'yellow';</iframe>
+<button><img src="play-button.png" width="10px; height10px;"></button>
 
-  <div id="foreground" class="mouse-bg"></div>
-
-  <div id="fore-foreground" class="mouse-bg"></div>
-
-  <div id="fore-fore-foreground" class="mouse-bg"></div>
-
+  
 
   <script>
-    $(document).ready(function () {
-
-      $('#background').mouseParallax({ moveFactor: 5 });
-
-      $('#foreground').mouseParallax({ moveFactor: 10 });
-
-      $('#fore-foreground').mouseParallax({ moveFactor: 15 });
-
-      $('#fore-fore-foreground').mouseParallax({ moveFactor: 20 });
-
-
-
-      $('body').height(3000);
-
+    
+  const [ html, css, javascript, iframe,button] = document.querySelectorAll('button, textarea, iframe');
+    button.addEventListener('click', () => {
+      const fullHTML = `
+        <!doctype html><html>
+          <head>
+            <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+              ${css.value}
+              </style>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"><\/script>
+            </head>
+          <body>
+            ${html.value}
+            <script>
+              ${javascript.value}
+              <\/script>
+              </body>
+        </html>`;
+      iframe.src = 'data:text/html,' + encodeURIComponent(fullHTML);
     });
-
-  </script>
+    </script>
 </body>
 
 </html>
