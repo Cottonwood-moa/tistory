@@ -528,7 +528,20 @@ height: auto;
 	top: 5%;
 	z-index: 2;
 }
+#JSfiddle{
+	
+	min-width: 550px;
+	position: fixed;
+	width: 50%;
+	height: 85%;
+	margin:0.5%;
+	padding:1%;
+	border-radius:2rem;
+	font-family: 'Gamja Flower', cursive;
+	top: 5%;
+	z-index: 3;
 
+}
 
   #inFolderContainer {
 	height:100%;
@@ -2771,4 +2784,20 @@ hr {
         left: 400px;
 		top: 150px;
     }
+}
+
+
+.codeBlock {
+    width: 200px;
+    height: 300px;
+    border:solid black; 
+    resize: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #35465d;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    display: block;
 }

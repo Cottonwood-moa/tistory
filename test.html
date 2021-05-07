@@ -24,41 +24,45 @@
 </head>
 <body>
  
-<div style="display: flex;">
-<textarea class="codeBlock" style="border-right: none;background-image: url('html.png');"><span id="span">반갑습니다.</span></textarea>
-<textarea class="codeBlock" style="background-image: url('css.png');">span { color: green; }</textarea>
-<textarea class="codeBlock" style="border-left: none; background-image: url('javascript.png');">javascript</textarea>
-</div>
-<iframe sandbox="allow-scripts" style="width: 600px;height: 300px;">span.onclick = () => span.style.color = 'yellow';</iframe>
-<button><img src="play-button.png" width="10px; height10px;"></button>
+   
+  <div style="display: flex;">
+    <textarea class="codeBlock" style="border-right: none;background-image: url('html.png');"><span>hi</span></textarea>
+    <textarea class="codeBlock" style="background-image: url('css.png');">span { color: green; }</textarea>
+    <textarea class="codeBlock" style="border-left: none; background-image: url('javascript.png');">javascript</textarea>
+    </div>
+    <iframe id="codeRun" sandbox="allow-scripts" style="width: 600px;height: 300px;">span.onclick = () => span.style.color = 'yellow';</iframe>
+    <img id="codeButton" src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/programming.png" style="width: 50px; height: 50px;">
 
   
 
-  <script>
-    
-  const [ html, css, javascript, iframe,button] = document.querySelectorAll('button, textarea, iframe');
-    button.addEventListener('click', () => {
-      const fullHTML = `
-        <!doctype html><html>
-          <head>
-            <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <style>
-              ${css.value}
-              </style>
-              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"><\/script>
-            </head>
-          <body>
-            ${html.value}
-            <script>
-              ${javascript.value}
-              <\/script>
-              </body>
-        </html>`;
-      iframe.src = 'data:text/html,' + encodeURIComponent(fullHTML);
-    });
-    </script>
+    <script>
+      console.log("hello");
+      const [ html, css, javascript, iframe,button] = document.querySelectorAll('#codeButton, .codeBlock ,#codeRun');
+     
+      button.addEventListener('click', () => {
+        console.log("click?");
+        const fullHTML = `
+          <!doctype html><html>
+            <head>
+              <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                ${css.value}
+                </style>
+              </head>
+            <body>
+              ${html.value}
+              <script>
+                ${javascript.value}
+                <\/script>
+                </body>
+          </html>`;
+          console.log("hi");
+        iframe.src = 'data:text/html,' + encodeURIComponent(fullHTML);
+      });
+      </script>
+
 </body>
 
 </html>

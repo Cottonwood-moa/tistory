@@ -631,6 +631,35 @@
 
           </div>
           <div id="leftThing" style="width: 5rem; height: 50rem; font:white;">
+<!--             
+            <button type="button" class="hideSessionJSfiddle mobile-menu btn_image" id="img_btn"><img
+              src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/code.png"
+              class="folderImg">
+            <span class="folderList">스니펫</span></button>
+
+
+          </div>
+
+          <div id="JSfiddle"
+          style="overflow-y:auto; overflow-x:hidden; display: none; background-image: url('https://tistory1.daumcdn.net/tistory/4707383/skin/images/inFolder.png');">
+          <div id="JSfiddleHeader" style="display: flex; text-align: right; border-bottom:solid 2px black; align-items: center;">
+            <img src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/2.png" style="position: relative; bottom: -2px;">
+            <h1 class="JSfiddleHeaderTitle" style="width: 225px;">Do your Code.</h1>
+            <img src="https://tistory4.daumcdn.net/tistory/4706624/skin/images/snowshoe-cat.png" class="cat" style="width: 32px; bottom: -19px;left: 100px;position: relative; cursor: pointer;">
+            <div style="width: 100%;">
+             
+              <i class="hideSessionJSfiddle fa fa-times fa-2x" style="cursor: pointer"></i>
+            </div>
+          </div>
+
+         
+          <div style="display: flex;">
+            <textarea class="codeBlock" style="border-right: none;background-image: url('https://tistory2.daumcdn.net/tistory/4706624/skin/images/javascript.png');"><span>hi</span></textarea>
+            <textarea class="codeBlock" style="background-image: url('https://tistory1.daumcdn.net/tistory/4706624/skin/images/css.png');">span { color: green; }</textarea>
+            <textarea class="codeBlock" style="border-left: none; background-image: url('https://tistory1.daumcdn.net/tistory/4706624/skin/images/html.png');">javascript</textarea>
+            </div>
+            <iframe id="codeRun" sandbox="allow-scripts" style="width: 600px;height: 300px;">span.onclick = () => span.style.color = 'yellow';</iframe>
+            <img id="codeButton" src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/programming.png" style="width: 50px; height: 50px;"> -->
 
           </div>
 
@@ -861,9 +890,6 @@
 
     </div>
 
-
-    <script src="./images/script.js"></script>
-
     <script>
 
       function hideAndShow(elementHideAndShow) {
@@ -874,7 +900,6 @@
         }
       }
     </script>
-
 
     <script>
       $('#innerPost').click(function () {
@@ -896,6 +921,27 @@
 
     </script>
 
+<script>
+
+
+  function hideDiv1() {
+    $(".hideSessionJSfiddle").click(function () {
+      $("#JSfiddle").stop().toggle("fast", function () {
+        sessionStorage.setItem("show-hide-JSfiddle", $("#JSfiddle").css("display"));
+        console.log(sessionStorage.getItem("show-hide-JSfiddle"))
+      });
+    });
+
+    if (sessionStorage.getItem("show-hide-JSfiddle")) {
+      $("#JSfiddle").css("display", sessionStorage.getItem("show-hide-JSfiddle"));
+    }
+  }
+  $(document).ready(function () {
+    hideDiv1();
+  });
+
+
+</script>
 
     <script>
 
@@ -918,6 +964,7 @@
 
 
     </script>
+
     <script>
 
 
@@ -1026,6 +1073,43 @@
 
       }
 
+      $(function () {
+
+const JSfiddleNote = $("#JSfiddle");
+
+
+JSfiddleNote.draggable({scroll: false},{ stop: function () {
+
+      const JSfiddleLeft = this.offsetLeft;
+      const JSfiddleTop = this.offsetTop;
+
+      sessionStorage.setItem("JSfiddleLeft", JSfiddleLeft);
+      sessionStorage.setItem("JSfiddleTop", JSfiddleTop);
+    }
+  });
+  updatePositionJSfiddle(JSfiddleNote);
+// window.addEventListener("storage", function () {
+//   updatePositionProfile(profileNote);
+// },
+
+//   false);
+
+
+});
+
+function updatePositionJSfiddle(JSfiddleNote) {
+
+const JSfiddleLeft = sessionStorage.getItem("JSfiddleLeft");
+const JSfiddleTop = sessionStorage.getItem("JSfiddleTop");
+JSfiddleNote.css({ left: JSfiddleLeft + "px", top: JSfiddleTop + "px" });
+
+JSfiddleNote[0].offsetTop = JSfiddleTop;
+JSfiddleNote[0].offsetLeft = JSfiddleLeft;
+
+
+}
+
+
       
     </script>
 
@@ -1034,6 +1118,7 @@
   $('.moa').click( () => new Audio('https://tistory1.daumcdn.net/tistory/4706624/skin/images/meow.mp3').play() );
 
 </script>
+
 
   </s_t3>
 
