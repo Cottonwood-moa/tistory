@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" />
@@ -590,33 +590,38 @@
                 class="folderImg">
               <span class="folderList" >게시글</span></button>
 
-            <a href="https://github.com/Cottonwood-moa">
-              <button type="button" class="btn_image" id="img_btn"><img
+           
+              <button type="button" class="btn_image" id="img_btn">
+								 <a href="https://github.com/Cottonwood-moa"><img
                   src="https://tistory1.daumcdn.net/tistory/4706624/skin/images/github.png"
                   class="folderImg">
+									      </a>
                 <span class="folderList" >깃허브</span></button>
-            </a>
+       
 
-            <a href="https://blog.naver.com/blog_geon">
-              <button type="button" class="btn_image" id="img_btn"><img
+            
+              <button type="button" class="btn_image" id="img_btn">
+								<a href="https://blog.naver.com/blog_geon"><img
                   src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/naver.png"
-                  class="folderImg">
+                  class="folderImg"></a>
                 <span class="folderList" >NBLOG</span></button>
-            </a>
+            
 
-            <a href="https://character-test.netlify.app/">
-              <button type="button" class="btn_image" id="img_btn"><img
+           
+              <button type="button" class="btn_image" id="img_btn">
+								 <a href="https://character-test.netlify.app/"><img
                   src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/modal.png"
-                  class="folderImg">
-                <span class="folderList" >닮은캐릭터</span></button>
-            </a>
+                  class="folderImg">     </a>
 
-            <a href="https://loverface.netlify.app/">
-              <button type="button" class="btn_image" id="img_btn"><img
+                <span class="folderList" >닮은캐릭터</span></button>
+       
+           
+              <button type="button" class="btn_image" id="img_btn">
+								 <a href="https://loverface.netlify.app/"><img
                   src="https://tistory3.daumcdn.net/tistory/4706624/skin/images/face.png"
-                  class="folderImg">
+                  class="folderImg"></a>
                 <span class="folderList" >궁합테스트</span></button>
-            </a>
+            
 
             <button type="button" class="btn_image" id="img_btn">
               <div class="subs" style="color: white ; text-shadow: 2px 2px #474747; font-weight: bold;">
@@ -1073,41 +1078,41 @@
 
       }
 
-      $(function () {
+//       $(function () {
 
-const JSfiddleNote = $("#JSfiddle");
-
-
-JSfiddleNote.draggable({scroll: false},{ stop: function () {
-
-      const JSfiddleLeft = this.offsetLeft;
-      const JSfiddleTop = this.offsetTop;
-
-      sessionStorage.setItem("JSfiddleLeft", JSfiddleLeft);
-      sessionStorage.setItem("JSfiddleTop", JSfiddleTop);
-    }
-  });
-  updatePositionJSfiddle(JSfiddleNote);
-// window.addEventListener("storage", function () {
-//   updatePositionProfile(profileNote);
-// },
-
-//   false);
+// const JSfiddleNote = $("#JSfiddle");
 
 
-});
+// JSfiddleNote.draggable({scroll: false},{ stop: function () {
 
-function updatePositionJSfiddle(JSfiddleNote) {
+//       const JSfiddleLeft = this.offsetLeft;
+//       const JSfiddleTop = this.offsetTop;
 
-const JSfiddleLeft = sessionStorage.getItem("JSfiddleLeft");
-const JSfiddleTop = sessionStorage.getItem("JSfiddleTop");
-JSfiddleNote.css({ left: JSfiddleLeft + "px", top: JSfiddleTop + "px" });
+//       sessionStorage.setItem("JSfiddleLeft", JSfiddleLeft);
+//       sessionStorage.setItem("JSfiddleTop", JSfiddleTop);
+//     }
+//   });
+//   updatePositionJSfiddle(JSfiddleNote);
+// // window.addEventListener("storage", function () {
+// //   updatePositionProfile(profileNote);
+// // },
 
-JSfiddleNote[0].offsetTop = JSfiddleTop;
-JSfiddleNote[0].offsetLeft = JSfiddleLeft;
+// //   false);
 
 
-}
+// });
+
+// function updatePositionJSfiddle(JSfiddleNote) {
+
+// const JSfiddleLeft = sessionStorage.getItem("JSfiddleLeft");
+// const JSfiddleTop = sessionStorage.getItem("JSfiddleTop");
+// JSfiddleNote.css({ left: JSfiddleLeft + "px", top: JSfiddleTop + "px" });
+
+// JSfiddleNote[0].offsetTop = JSfiddleTop;
+// JSfiddleNote[0].offsetLeft = JSfiddleLeft;
+
+
+// }
 
 
       
